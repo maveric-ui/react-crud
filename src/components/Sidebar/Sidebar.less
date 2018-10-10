@@ -1,0 +1,68 @@
+@import '../../styles/_colors';
+
+.container-sidebar {
+  width: 80px;
+  height: 100%;
+  background: @white;
+  box-shadow: 2px 0 4px 0 rgba(113, 113, 113, 0.15);
+
+  .sidebar__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .sidebar__item {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+  }
+
+  .img__one {
+    &:hover g {
+      fill: @primary-color;
+    }
+  }
+
+  .img__two {
+    &:hover g {
+      path {
+        stroke: @primary-color;
+      }
+      rect {
+        fill: @primary-color;
+      }
+    }
+  }
+
+  .img__tree {
+    &:hover g {
+      rect {
+        stroke: @primary-color;
+      }
+      rect[aria-label="arrow"] {
+        fill: #59c355;
+      }
+    }
+  }
+
+  .img__four {
+    &:hover g {
+      fill: @primary-color;
+    }
+  }
+
+  .active {
+    .img__one {
+      g {
+        fill: @primary-color;
+      }
+    }
+  }
+
+
+}
+
