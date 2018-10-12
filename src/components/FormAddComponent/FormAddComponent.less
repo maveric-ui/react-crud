@@ -1,0 +1,76 @@
+@import '../../styles/_colors';
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  color: @light-grey-two;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+
+  .form__field {
+    color: @light-grey-two;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    margin-top: 45px;
+
+    div {
+      &:before {
+        border-bottom: 1px solid @light-grey-two;
+      }
+
+      &:after {
+        border-bottom: 2px solid @primary-color;
+      }
+    }
+
+
+    input[type="date"] {
+      &::placeholder {
+        color: @light-grey-two;
+      }
+    }
+
+  }
+
+  .form__controls {
+    margin-top: 40px;
+    text-align: right;
+
+    .btn {
+      text-transform: none;
+      border-radius: 14px;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 0;
+      min-height: 0;
+    }
+
+    .btn-save {
+      width: 96px;
+      height: 28px;
+      margin-right: 15px;
+      border: 2px solid @primary-color;
+      color: @primary-color;
+
+      .i-check {
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+
+    .btn-cancel {
+      width: 107px;
+      height: 28px;
+      border: 2px solid @alert-color;
+      color: @alert-color;
+
+      .i-close {
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 5px;
+      }
+    }
+  }
+
+}

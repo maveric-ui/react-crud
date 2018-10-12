@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import './PageContainer.less';
 import TableComponent from '../../components/TableComponent/TableComponent';
-import { getProfiles } from '../../actions/ProfileAction';
+import ModalAdd from '../../components/ModalAdd/ModalAdd';
+import Loader from 'react-loader-spinner'
 
 class PageContainer extends Component {
-  render () {
-    const { profiles, getProfiles } = this.props;
+
+  componentDidMount() {
+    this.props.getProfiles();
+  }
+
+  renderLoadingTemplate = () => {
+    return (
+        <div className="loader-container">
+          <Loader
+              type="Bars"
+              color="#59c355"
+              height="100"
+              width="100"
+          />
+          <p className="loader__title">Loading...</p>
+        </div>
+    )
+  };
+
+  render() {
+    const {profiles, isLoading} = this.props;
     return (
         <div className="page-container">
-          <TableComponent
-            profile={profiles}
-            handleProfile={getProfiles}
-          />
+          <ModalAdd/>
+          {isLoading ? this.renderLoadingTemplate() :
+              <TableComponent profiles={profiles}/>
+          }
+
         </div>
     )
   }
 }
 
-const mapStateToProps = store => {
-  return {
-    profiles: store.profiles,
-  }
-};
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getProfiles: () => dispatch(getProfiles())
-  }
-};
-
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-) (PageContainer)
+export default PageContainer

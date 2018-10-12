@@ -1,6 +1,14 @@
 @import '../../styles/_colors';
 
+.root-table {
+  width: 100%;
+  height: 84%;
+  overflow: auto;
+}
+
 .table {
+  border-spacing: 0 5px !important;
+  border-collapse: separate !important;
 
   .table__head__cell {
     text-transform: uppercase;
@@ -10,10 +18,30 @@
     border-bottom: none;
   }
 
-  .table__body_cell {
-    font-size: 16px;
-    font-family: 'Helvetica', sans-serif;
-    color: @medium-grey;
+  .table__body__row {
+    background: @white;
+    box-shadow: 0 0 4px 0 rgba(113, 113, 113, 0.15);
+    padding: 10px;
+
+    .table__body__cell {
+      border-bottom: none;
+      font-size: 16px;
+      font-family: 'Helvetica', sans-serif;
+      color: @medium-grey;
+      padding: 10px 20px;
+    }
+
+    .cell__id {
+        width: 2%;
+    }
+
+    .cell__address {
+      max-width: 216px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
 }
+
