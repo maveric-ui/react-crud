@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './FormAddComponent.less';
-import { TextField, Button, Icon, MenuItem, withStyles } from '@material-ui/core';
+import { TextField, Button, Icon, MenuItem } from '@material-ui/core';
 
 class FormAddComponent extends Component {
   state = {
@@ -52,21 +52,19 @@ class FormAddComponent extends Component {
           <TextField
               required
               id="employee-dateOfBirth"
-              placeholder="Date of Birth"
               type="date"
               className="form__field date-piker"
           />
           <TextField
               required
               id="employee-hireDate"
-              placeholder="Hire date"
               type="date"
               className="form__field date-piker"
           />
           <TextField
               id="employee-address"
-              placeholder="Address"
               type="input"
+              placeholder="Address"
               className="form__field"
           />
           <TextField

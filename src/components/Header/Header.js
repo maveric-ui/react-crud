@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Header.less';
 import logo from './../../assets/img/logo.svg'
+import SearchComponent from '../SearchComponent/SearchComponent';
 
 class Header extends Component {
   render() {
@@ -9,10 +10,9 @@ class Header extends Component {
           <div className="logo">
             <img src={logo} alt="logo"/>
           </div>
-
-          <main>
-            <div>Search</div>
-          </main>
+          <div className="header__items">
+            <SearchComponent />
+          </div>
         </div>
     )
   }
