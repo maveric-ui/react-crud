@@ -28,9 +28,14 @@ class PageContainer extends Component {
     const {profiles, isLoading} = this.props;
     return (
         <div className="page-container">
-          <ModalAdd/>
           {isLoading ? this.renderLoadingTemplate() :
-              <TableComponent profiles={profiles}/>
+              (
+                  <React.Fragment>
+                    <ModalAdd/>
+                    <TableComponent profiles={profiles}/>
+                  </React.Fragment>
+              )
+
           }
 
         </div>

@@ -1,0 +1,39 @@
+@import "./../../styles/_colors";
+
+.search {
+  width: 100%;
+
+  .i-search-grey {
+    width: 27px;
+    height: 27px;
+    font-size: 27px;
+    color: @light-grey;
+    margin-right: 13px;
+  }
+
+  .i-search-primary {
+    width: 27px;
+    height: 27px;
+    font-size: 27px;
+    color: @primary-color;
+    margin-right: 13px;
+  }
+
+  &:before {
+    border-bottom: none !important;
+  }
+
+  &:after {
+    margin-bottom: -7px;
+    border-bottom: 2px solid @light-grey !important;
+  }
+
+  input {
+    &::placeholder {
+      font-family: 'Helvetica', sans-serif;
+      font-size: 18px;
+      font-style: oblique;
+      color: @light-grey-two;
+    }
+  }
+}
