@@ -26,7 +26,7 @@ export const getProfiles = () => {
               payload: new Error('failed'),
             })
           })
-    }, 2000);
+    }, 0);
 
 
   }

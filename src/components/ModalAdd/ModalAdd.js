@@ -5,7 +5,7 @@ import FormAddComponent from '../FormAddComponent/FormAddComponent'
 
 class ModalAdd extends Component {
   state = {
-    open: false,
+    open: true,
   };
 
   handleOpen = () => {
@@ -38,7 +38,7 @@ class ModalAdd extends Component {
               <h1 className="modal-container__title">
                 Adding new employee
               </h1>
-              <FormAddComponent />
+              <FormAddComponent onClose={this.handleClose}/>
             </div>
           </Modal>
         </div>

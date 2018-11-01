@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import './FormAddComponent.less';
-import { TextField, Button, Icon, MenuItem } from '@material-ui/core';
+import { Button, Icon, MenuItem, Input, Select, FormControl } from '@material-ui/core';
+
+
+
 
 class FormAddComponent extends Component {
   state = {
-    city: 'City',
-    country: 'Country'
+    name: '',
+    position: '',
+    dateOfBirth: '',
+    hireDate: '',
+    address: '',
+    city: '',
+    country: ''
   };
 
   renderMenuItemCity = () => {
@@ -26,81 +34,121 @@ class FormAddComponent extends Component {
     })
   };
 
-  handleChange = name => event => {
+  handleValueChange = name => event => {
     this.setState({
       [name]: event.target.value,
     });
   };
 
-  render () {
-    const { city, country } = this.state;
+  handleSetValues = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    });
+
+  };
+
+  onAddEmployee = () => {
+    console.log(
+        this.state.name,
+        this.state.position,
+        this.state.dateOfBirth,
+        this.state.hireDate,
+        this.state.address,
+        this.state.city,
+        this.state.country,
+    )
+  };
+
+  render() {
+    const {
+      name,
+      position,
+      dateOfBirth,
+      hireDate,
+      address,
+      city,
+      country
+    } = this.state;
+
     return (
         <form className="form-container" noValidate autoComplete="off">
-          <TextField
-              required
-              id="employee-name"
-              placeholder="Name"
-              type="input"
-              className="form__field"
-          />
-          <TextField
+          <FormControl>
+            <Input
+                required
+                id="employee-name"
+                placeholder="Name"
+                type="input"
+                className="form__field"
+                value={name}
+                onChange={this.handleSetValues('name')}
+            />
+          </FormControl>
+          <Input
               required
               id="employee-position"
               placeholder="Position"
               className="form__field"
+              value={position}
+              onChange={this.handleSetValues('position')}
           />
-          <TextField
+          <Input
               required
               id="employee-dateOfBirth"
               type="date"
               className="form__field date-piker"
+              value={dateOfBirth}
+              onChange={this.handleSetValues('dateOfBirth')}
           />
-          <TextField
+          <Input
               required
               id="employee-hireDate"
               type="date"
               className="form__field date-piker"
+              value={hireDate}
+              onChange={this.handleSetValues('hireDate')}
           />
-          <TextField
+          <Input
               id="employee-address"
               type="input"
               placeholder="Address"
               className="form__field"
+              value={address}
+              onChange={this.handleSetValues('address')}
           />
-          <TextField
-              select
-              id="employee-city"
-              name="city"
-              className="form__field"
-              value={city}
-              onChange={this.handleChange('city')}
-          >
-            <MenuItem key={city} value={city} disabled selected>
-              {city}
-              </MenuItem>
-            {this.renderMenuItemCity()}
-          </TextField>
-          <TextField
-              required
-              select
-              id="employee-country"
-              name="country"
-              className="form__field"
-              value={country}
-              onChange={this.handleChange('country')}
-          >
-            <MenuItem key={country} value={country} disabled selected>
-              {country}
-              </MenuItem>
-            {this.renderMenuItemCountry()}
-          </TextField>
+          <FormControl>
+            <Select
+                id="employee-city"
+                name="city"
+                className="form__field"
+                displayEmpty
+                value={city}
+                onChange={this.handleValueChange('city')}
+            >
+              <MenuItem value="" disabled>City</MenuItem>
+              {this.renderMenuItemCity()}
+            </Select>
+          </FormControl>
+          <FormControl>
+            <Select
+                required
+                id="employee-country"
+                name="country"
+                className="form__field"
+                displayEmpty
+                value={country}
+                onChange={this.handleValueChange('country')}
+            >
+              <MenuItem value="" disabled>Country</MenuItem>
+              {this.renderMenuItemCountry()}
+            </Select>
+          </FormControl>
 
           <div className="form__controls">
-            <Button variant="outlined" className="btn btn-save">
+            <Button variant="outlined" className="btn btn-save" onClick={this.onAddEmployee}>
               <Icon className="i-check">check</Icon>
               Save
             </Button>
-            <Button variant="outlined" className="btn btn-cancel">
+            <Button variant="outlined" className="btn btn-cancel" onClick={this.props.onClose}>
               <Icon className="i-close">close</Icon>
               Cancel
             </Button>

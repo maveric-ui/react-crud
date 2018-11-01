@@ -8,10 +8,25 @@
   font-size: 16px;
 
   .form__field {
-    color: @light-grey-two;
     font-family: 'Helvetica', sans-serif;
     font-size: 16px;
     margin-top: 45px;
+
+    &:before {
+      border-bottom: 1px solid @light-grey-two;
+    }
+
+    &:after {
+      border-bottom: 2px solid @primary-color;
+    }
+
+    &:hover:before {
+      border-bottom: 2px solid @primary-color !important;
+    }
+
+    &::placeholder {
+      color: @light-grey-two;
+    }
 
     div {
       &:before {
@@ -25,10 +40,6 @@
       &:hover:before {
         border-bottom: 2px solid @primary-color !important;
       }
-    }
-
-    .form__field__item__dis {
-      color: red;
     }
   }
 
