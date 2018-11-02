@@ -5,14 +5,13 @@ export const EMPLOYEE_ADD_SUCCESS = "PROFILES_REQUEST_SUCCESS";
 export const EMPLOYEE_ADD_FAIL = "PROFILES_REQUEST_FAIL";
 
 
-export const addEmployee = () => {
+export const addEmployee = newEmployee => {
   return dispatch => {
     dispatch({
       type: EMPLOYEE_ADDING
     });
 
     axios.post('http://localhost:3200/profiles', {
-      name: 'Fred'
     })
         .then((response) => {
           dispatch({

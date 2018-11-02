@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './ModalAdd.less';
 import { Modal, Button, Icon } from '@material-ui/core';
 import FormAddComponent from '../FormAddComponent/FormAddComponent'
+import connect from 'react-redux/es/connect/connect';
+import { addEmployee } from '../../actions/EmployeeAddAction';
 
 class ModalAdd extends Component {
   state = {
@@ -17,6 +19,8 @@ class ModalAdd extends Component {
   };
 
   render() {
+    const { addEmployee } = this.props;
+
     return (
         <div>
           <div className="modal-control">
@@ -38,7 +42,7 @@ class ModalAdd extends Component {
               <h1 className="modal-container__title">
                 Adding new employee
               </h1>
-              <FormAddComponent onClose={this.handleClose}/>
+              <FormAddComponent onClose={this.handleClose} addEmployee={this.onSubmit} />
             </div>
           </Modal>
         </div>
@@ -46,4 +50,21 @@ class ModalAdd extends Component {
   }
 }
 
-export default ModalAdd;
+const mapStateToProps = store => {
+  console.log(store)
+  return {
+    profiles: store.employeeAddReducer.profiles,
+    isLoading: store.employeeAddReducer.isLoading,
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addEmployee: newEmployee => dispatch(addEmployee(newEmployee))
+  }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+) (ModalAdd);

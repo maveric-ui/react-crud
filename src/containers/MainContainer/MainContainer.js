@@ -27,7 +27,6 @@ class MainContainer extends Component {
 }
 
 const mapStateToProps = store => {
-  console.log(store)
   return {
     profiles: store.profileReducer.profiles,
     isLoading: store.profileReducer.isLoading,

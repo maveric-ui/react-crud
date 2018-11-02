@@ -11,7 +11,6 @@ class FormAddComponent extends Component {
     address: '',
     city: '',
     country: '',
-    errorsName: false,
   };
 
   renderMenuItemCity = () => {
@@ -40,15 +39,26 @@ class FormAddComponent extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    console.log(
-        this.state.name,
-        this.state.position,
-        this.state.dateOfBirth,
-        this.state.hireDate,
-        this.state.address,
-        this.state.city,
-        this.state.country,
-    )
+    const name = this.state.name;
+    const position = this.state.position;
+    const dateOfBirth = this.state.dateOfBirth;
+    const hireDate = this.state.hireDate;
+    const address = this.state.address;
+    const city = this.state.city;
+    const country = this.state.country;
+
+    const newEmployee = {
+      id: new Date(),
+      name,
+      position,
+      dateOfBirth,
+      hireDate,
+      address,
+      city,
+      country
+    };
+
+    return newEmployee
   };
 
 
@@ -61,11 +71,10 @@ class FormAddComponent extends Component {
       address,
       city,
       country,
-      errorsName
     } = this.state;
 
     return (
-        <form className="form-container" noValidate autoComplete="off">
+        <form className="form-container" noValidate autoComplete="off" onSubmit={this.onSubmit}>
           <FormControl>
             <Input
                 required
@@ -76,7 +85,7 @@ class FormAddComponent extends Component {
                 value={name}
                 onChange={this.handleValueChange('name')}
             />
-            <FormHelperText error={errorsName}>Error</FormHelperText>
+            {/*<FormHelperText error={errorsName}>Error</FormHelperText>*/}
           </FormControl>
           <Input
               id="employee-position"
@@ -138,11 +147,11 @@ class FormAddComponent extends Component {
           </FormControl>
 
           <div className="form__controls">
-            <Button variant="outlined" className="btn btn-save" onClick={this.onSubmit}>
+            <Button type="submit" variant="outlined" className="btn btn-save">
               <Icon className="i-check">check</Icon>
               Save
             </Button>
-            <Button variant="outlined" className="btn btn-cancel" onClick={this.props.onClose}>
+            <Button type="button" variant="outlined" className="btn btn-cancel" onClick={this.props.onClose}>
               <Icon className="i-close">close</Icon>
               Cancel
             </Button>
