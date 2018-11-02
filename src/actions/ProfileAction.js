@@ -4,7 +4,6 @@ export const PROFILES_REQUEST = "PROFILES_REQUEST";
 export const PROFILES_REQUEST_SUCCESS = "PROFILES_REQUEST_SUCCESS";
 export const PROFILES_REQUEST_FAIL = "PROFILES_REQUEST_FAIL";
 
-
 export const getProfiles = () => {
   return dispatch => {
     dispatch({

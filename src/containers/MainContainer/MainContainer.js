@@ -27,9 +27,10 @@ class MainContainer extends Component {
 }
 
 const mapStateToProps = store => {
+  console.log(store)
   return {
-    profiles: store.profiles,
-    isLoading: store.isLoading,
+    profiles: store.profileReducer.profiles,
+    isLoading: store.profileReducer.isLoading,
   }
 };
 
@@ -38,7 +39,6 @@ const mapDispatchToProps = dispatch => {
     getProfiles: () => dispatch(getProfiles())
   }
 };
-
 
 export default connect(
     mapStateToProps,

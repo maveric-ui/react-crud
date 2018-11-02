@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './FormAddComponent.less';
-import { Button, Icon, MenuItem, Input, Select, FormControl } from '@material-ui/core';
-
-
-
+import { Button, Icon, MenuItem, Input, Select, FormControl, FormHelperText  } from '@material-ui/core';
 
 class FormAddComponent extends Component {
   state = {
@@ -13,7 +10,8 @@ class FormAddComponent extends Component {
     hireDate: '',
     address: '',
     city: '',
-    country: ''
+    country: '',
+    errorsName: false,
   };
 
   renderMenuItemCity = () => {
@@ -40,14 +38,8 @@ class FormAddComponent extends Component {
     });
   };
 
-  handleSetValues = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
-
-  };
-
-  onAddEmployee = () => {
+  onSubmit = (event) => {
+    event.preventDefault();
     console.log(
         this.state.name,
         this.state.position,
@@ -59,6 +51,7 @@ class FormAddComponent extends Component {
     )
   };
 
+
   render() {
     const {
       name,
@@ -67,7 +60,8 @@ class FormAddComponent extends Component {
       hireDate,
       address,
       city,
-      country
+      country,
+      errorsName
     } = this.state;
 
     return (
@@ -80,16 +74,16 @@ class FormAddComponent extends Component {
                 type="input"
                 className="form__field"
                 value={name}
-                onChange={this.handleSetValues('name')}
+                onChange={this.handleValueChange('name')}
             />
+            <FormHelperText error={errorsName}>Error</FormHelperText>
           </FormControl>
           <Input
-              required
               id="employee-position"
               placeholder="Position"
               className="form__field"
               value={position}
-              onChange={this.handleSetValues('position')}
+              onChange={this.handleValueChange('position')}
           />
           <Input
               required
@@ -97,7 +91,7 @@ class FormAddComponent extends Component {
               type="date"
               className="form__field date-piker"
               value={dateOfBirth}
-              onChange={this.handleSetValues('dateOfBirth')}
+              onChange={this.handleValueChange('dateOfBirth')}
           />
           <Input
               required
@@ -105,7 +99,7 @@ class FormAddComponent extends Component {
               type="date"
               className="form__field date-piker"
               value={hireDate}
-              onChange={this.handleSetValues('hireDate')}
+              onChange={this.handleValueChange('hireDate')}
           />
           <Input
               id="employee-address"
@@ -113,7 +107,7 @@ class FormAddComponent extends Component {
               placeholder="Address"
               className="form__field"
               value={address}
-              onChange={this.handleSetValues('address')}
+              onChange={this.handleValueChange('address')}
           />
           <FormControl>
             <Select
@@ -144,7 +138,7 @@ class FormAddComponent extends Component {
           </FormControl>
 
           <div className="form__controls">
-            <Button variant="outlined" className="btn btn-save" onClick={this.onAddEmployee}>
+            <Button variant="outlined" className="btn btn-save" onClick={this.onSubmit}>
               <Icon className="i-check">check</Icon>
               Save
             </Button>
