@@ -3,7 +3,7 @@ import './MainContainer.less';
 import Header from '../../components/Header/Header';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import PageContainer from '../PageContainer/PageContainer';
-import { getProfiles } from '../../actions/ProfileAction';
+import { getProfiles } from '../../actions/ProfilesAction';
 import connect from 'react-redux/es/connect/connect';
 
 class MainContainer extends Component {
@@ -28,8 +28,8 @@ class MainContainer extends Component {
 
 const mapStateToProps = store => {
   return {
-    profiles: store.profileReducer.profiles,
-    isLoading: store.profileReducer.isLoading,
+    profiles: store.profilesReducer.profiles,
+    isLoading: store.profilesReducer.isLoading,
   }
 };
 

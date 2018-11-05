@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-import { profileReducer } from './ProfileReducer';
-import { employeeAddReducer } from './EmployeeAddReducer';
+import { profilesReducer } from './ProfilesReducer';
 
 export const rootReducer = combineReducers({
-  profileReducer: profileReducer,
-  employeeAddReducer: employeeAddReducer,
+  profilesReducer: profilesReducer,
 });
