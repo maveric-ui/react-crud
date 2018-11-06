@@ -2,7 +2,7 @@ import {
   PROFILES_REQUEST,
   PROFILES_REQUEST_SUCCESS,
   PROFILES_REQUEST_FAIL,
-  EMPLOYEE_ADDED,
+  EMPLOYEE_ADD_SUCCESS,
 } from '../actions/ProfilesAction';
 
 const initialState = {
@@ -18,13 +18,14 @@ export const profilesReducer = (state = initialState, action) => {
       return {...state, isLoading: true, error: null};
 
     case PROFILES_REQUEST_SUCCESS:
-      return {...state, isLoading: false, profiles: action.payload};
+      return {...state, isLoading: false, profiles:  action.payload};
 
-    case EMPLOYEE_ADDED:
-      return {...state, isLoading: false, profiles: action.payload};
+    case EMPLOYEE_ADD_SUCCESS:
+      return {...state, isLoading: false, profiles: [...state.profiles, action.payload.data]};
 
     case PROFILES_REQUEST_FAIL:
       return {...state, isLoading: false, error: action.payload};
+
 
     default:
       return state

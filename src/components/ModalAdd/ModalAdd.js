@@ -18,9 +18,20 @@ class ModalAdd extends Component {
     this.setState({open: false});
   };
 
-  render() {
-    const { addEmployee } = this.props;
+  handleSave = newEmployee => {
+    this.props.addEmployee(newEmployee);
+    this.setState(({open: false}))
+  };
 
+  generateEmployeeID = () => {
+    const { profiles } = this.props;
+    return profiles.map((item, index, arr) => {
+      const lastIndex = arr.length - 1;
+      return lastIndex + 1;
+    });
+  };
+
+  render() {
     return (
         <div>
           <div className="modal-control">
@@ -42,7 +53,11 @@ class ModalAdd extends Component {
               <h1 className="modal-container__title">
                 Adding new employee
               </h1>
-              <FormAddComponent onClose={this.handleClose} addEmployee={addEmployee} />
+              <FormAddComponent
+                  onClose={this.handleClose}
+                  handleSave={this.handleSave}
+                  generateEmployeeID={this.generateEmployeeID}
+              />
             </div>
           </Modal>
         </div>
@@ -53,12 +68,13 @@ class ModalAdd extends Component {
 const mapStateToProps = store => {
   return {
     newEmployee: store.profilesReducer.employee,
+    profiles: store.profilesReducer.profiles
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    addEmployee: newEmployee => dispatch(addEmployee(newEmployee))
+    addEmployee: newEmployee => dispatch(addEmployee(newEmployee)),
   }
 };
 

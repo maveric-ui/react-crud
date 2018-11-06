@@ -6,7 +6,6 @@ export const PROFILES_REQUEST_FAIL = "PROFILES_REQUEST_FAIL";
 
 export const EMPLOYEE_ADD_SUCCESS = "EMPLOYEE_ADD_SUCCESS";
 export const EMPLOYEE_ADD_FAIL = "EMPLOYEE_ADD_FAIL";
-export const EMPLOYEE_ADDED = "EMPLOYEE_ADDED";
 
 export const getProfiles = () => {
   return dispatch => {
@@ -21,12 +20,6 @@ export const getProfiles = () => {
               type: PROFILES_REQUEST_SUCCESS,
               payload: response.data,
             });
-          })
-          .then(() => {
-            dispatch({
-              type: EMPLOYEE_ADDED,
-              payload: addEmployee(),
-            })
           })
           .catch(() => {
             dispatch({

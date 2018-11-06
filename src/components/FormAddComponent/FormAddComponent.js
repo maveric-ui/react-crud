@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './FormAddComponent.less';
-import { Button, Icon, MenuItem, Input, Select, FormControl, FormHelperText  } from '@material-ui/core';
+import { Button, Icon, MenuItem, Input, Select, FormControl } from '@material-ui/core';
 
 class FormAddComponent extends Component {
   state = {
@@ -49,7 +49,7 @@ class FormAddComponent extends Component {
     const country = this.state.country;
 
     const newEmployee = {
-      id: new Date(),
+      id: this.props.generateEmployeeID,
       name,
       position,
       dateOfBirth,
@@ -59,10 +59,8 @@ class FormAddComponent extends Component {
       country
     };
 
-    this.props.addEmployee(newEmployee);
-
+    this.props.handleSave(newEmployee);
   };
-
 
   render() {
     const {
@@ -76,7 +74,8 @@ class FormAddComponent extends Component {
     } = this.state;
 
     return (
-        <form className="form-container" noValidate autoComplete="off" >
+        <form className="form-container" noValidate autoComplete="off">
+          {console.log(this.props.profiles)}
           <FormControl>
             <Input
                 required
@@ -87,7 +86,6 @@ class FormAddComponent extends Component {
                 value={name}
                 onChange={this.handleValueChange('name')}
             />
-            {/*<FormHelperText error={errorsName}>Error</FormHelperText>*/}
           </FormControl>
           <Input
               id="employee-position"
