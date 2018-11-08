@@ -37,9 +37,8 @@ class FormAddComponent extends Component {
     });
   };
 
-  onSubmit = (event) => {
-    event.preventDefault();
-
+  onSubmit = (e) => {
+    e.preventDefault()
     const name = this.state.name;
     const position = this.state.position;
     const dateOfBirth = this.state.dateOfBirth;
@@ -74,8 +73,7 @@ class FormAddComponent extends Component {
     } = this.state;
 
     return (
-        <form className="form-container" noValidate autoComplete="off">
-          {console.log(this.props.profiles)}
+        <form className="form-container" noValidate autoComplete="off" onSubmit={this.onSubmit}>
           <FormControl>
             <Input
                 required
@@ -147,7 +145,7 @@ class FormAddComponent extends Component {
           </FormControl>
 
           <div className="form__controls">
-            <Button type="submit" variant="outlined" className="btn btn-save" onClick={this.onSubmit}>
+            <Button type="submit" variant="outlined" className="btn btn-save">
               <Icon className="i-check">check</Icon>
               Save
             </Button>

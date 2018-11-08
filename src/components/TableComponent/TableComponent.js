@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import './TableComponent.less';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableHead, TableRow, Button, Icon } from '@material-ui/core';
 
 class TableComponent extends Component {
+
+  onEdit = (e, profile) => {
+    console.log(profile)
+  };
+
+  onDelete = (e, employee) => {
+    this.props.deleteEmployee(employee.id);
+  };
 
   renderTableBodyCells = () => {
     const {profiles} = this.props;
@@ -10,13 +18,13 @@ class TableComponent extends Component {
       const dateOption = {
         day: "numeric",
         month: "numeric",
-        year:"numeric",
+        year: "numeric",
       };
       const dateOfBirth = new Date(profile.dateOfBirth).toLocaleDateString('ru', dateOption);
       const hireDate = new Date(profile.hireDate).toLocaleDateString('ru', dateOption);
       return (
           <TableRow key={profile.id} className="table__body__row">
-            <TableCell className="table__body__cell cell__id">{profile.id}</TableCell>
+            <TableCell className="table__body__cell">{profile.id}</TableCell>
             <TableCell className="table__body__cell">{profile.name}</TableCell>
             <TableCell className="table__body__cell">{profile.position}</TableCell>
             <TableCell className="table__body__cell">{dateOfBirth}</TableCell>
@@ -24,6 +32,20 @@ class TableComponent extends Component {
             <TableCell className="table__body__cell cell__address">{profile.address}</TableCell>
             <TableCell className="table__body__cell">{profile.city}</TableCell>
             <TableCell className="table__body__cell">{profile.country}</TableCell>
+            <TableCell className="table__body__cell">
+              <Button variant="fab" aria-label="Edit" className="btn btn-edit"
+                      onClick={((e) => this.onEdit(e, profile))}
+              >
+                <Icon>edit_icon</Icon>
+              </Button>
+            </TableCell>
+            <TableCell className="table__body__cell">
+              <Button variant="fab" aria-label="Delete" className="btn btn-delete"
+                      onClick={((e) => this.onDelete(e, profile))}
+              >
+                <Icon>delete_icon</Icon>
+              </Button>
+            </TableCell>
           </TableRow>
       )
     });

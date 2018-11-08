@@ -67,7 +67,6 @@ class ModalAdd extends Component {
 
 const mapStateToProps = store => {
   return {
-    newEmployee: store.profilesReducer.employee,
     profiles: store.profilesReducer.profiles
   }
 };
