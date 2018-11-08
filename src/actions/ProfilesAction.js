@@ -3,11 +3,12 @@ import axios from 'axios';
 export const PROFILES_REQUEST = "PROFILES_REQUEST";
 export const PROFILES_REQUEST_SUCCESS = "PROFILES_REQUEST_SUCCESS";
 export const PROFILES_REQUEST_FAIL = "PROFILES_REQUEST_FAIL";
-export const EMPLOYEE_ADD_SUCCESS = "EMPLOYEE_ADD_SUCCESS";
+export const EMPLOYEE_ADD = "EMPLOYEE_ADD";
+export const PROFILES_SEARCH = "PROFILES_SEARCH";
 export const EMPLOYEE_DELETE = "EMPLOYEE_DELETE";
 
-const url = 'http://localhost:3200/profiles';
 
+const url = 'http://localhost:3200/profiles';
 
 export const getProfiles = () => {
   return dispatch => {
@@ -15,22 +16,36 @@ export const getProfiles = () => {
       type: PROFILES_REQUEST
     });
 
-    setTimeout(() => {
-      axios.get(url)
-          .then((response) => {
-            dispatch({
-              type: PROFILES_REQUEST_SUCCESS,
-              payload: response.data,
-            });
+    const getProfiles = axios.get(url)
+        .then((response) => {
+          dispatch({
+            type: PROFILES_REQUEST_SUCCESS,
+            payload: response.data,
+          });
+        })
+        .catch(() => {
+          dispatch({
+            type: PROFILES_REQUEST_FAIL,
+            error: true,
+            payload: new Error('failed'),
           })
-          .catch(() => {
-            dispatch({
-              type: PROFILES_REQUEST_FAIL,
-              error: true,
-              payload: new Error('failed'),
-            })
-          })
-    }, 1000);
+        });
+    setTimeout(() => getProfiles, 1500);
+  }
+};
+
+export const searchEmployee = (searchKey) => {
+  return dispatch => {
+    axios.get(`${url}?q=${searchKey}`)
+        .then((response) => {
+          dispatch({
+            type: PROFILES_SEARCH,
+            payload: response.data,
+          });
+        })
+        .catch(() => {
+          return new Error('failed')
+        });
   }
 };
 
@@ -39,12 +54,15 @@ export const addEmployee = newEmployee => {
     axios.post(url, newEmployee)
         .then((newEmployee) => {
           dispatch({
-            type: EMPLOYEE_ADD_SUCCESS,
+            type: EMPLOYEE_ADD,
             payload: newEmployee,
           });
         })
   }
 };
+
+
+
 
 export const deleteEmployee = employeeID => {
   return dispatch => {

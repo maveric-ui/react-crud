@@ -2,7 +2,7 @@ import {
   PROFILES_REQUEST,
   PROFILES_REQUEST_SUCCESS,
   PROFILES_REQUEST_FAIL,
-  EMPLOYEE_ADD_SUCCESS, EMPLOYEE_DELETE,
+  EMPLOYEE_ADD, EMPLOYEE_DELETE, PROFILES_SEARCH,
 } from '../actions/ProfilesAction';
 
 const initialState = {
@@ -20,7 +20,10 @@ export const profilesReducer = (state = initialState, action) => {
     case PROFILES_REQUEST_SUCCESS:
       return {...state, isLoading: false, profiles: action.payload};
 
-    case EMPLOYEE_ADD_SUCCESS:
+    case PROFILES_SEARCH:
+      return {...state,isLoading: false, profiles: action.payload};
+
+    case EMPLOYEE_ADD:
       return {...state, isLoading: false, profiles: [...state.profiles, action.payload.data]};
 
     case EMPLOYEE_DELETE:

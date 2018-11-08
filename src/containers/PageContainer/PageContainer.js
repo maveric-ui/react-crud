@@ -7,7 +7,6 @@ import connect from 'react-redux/es/connect/connect';
 import { deleteEmployee } from '../../actions/ProfilesAction';
 
 class PageContainer extends Component {
-
   componentDidMount() {
     this.props.getProfiles();
   }

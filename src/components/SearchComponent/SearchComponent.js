@@ -15,10 +15,17 @@ class SearchComponent extends Component {
     this.setState({ focused: false })
   };
 
+  onChange = e => {
+    const {searchEmployee} = this.props;
+    searchEmployee(e.target.value);
+  };
+
+
   render() {
     const {focused} = this.state;
     const searchIcon = `i-search-${focused ? "primary" : "grey"}`;
     return (
+
         <Input
             id="search"
             className="search"
@@ -29,6 +36,7 @@ class SearchComponent extends Component {
             }
             onFocus={this.onFocus}
             onBlur={this.onBlur}
+            onChange={this.onChange}
         />
     )
   }

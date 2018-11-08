@@ -32,18 +32,18 @@ class TableComponent extends Component {
             <TableCell className="table__body__cell cell__address">{profile.address}</TableCell>
             <TableCell className="table__body__cell">{profile.city}</TableCell>
             <TableCell className="table__body__cell">{profile.country}</TableCell>
-            <TableCell className="table__body__cell">
+            <TableCell className="table__body__cell cell-control">
               <Button variant="fab" aria-label="Edit" className="btn btn-edit"
                       onClick={((e) => this.onEdit(e, profile))}
               >
-                <Icon>edit_icon</Icon>
+                <Icon className="i-edit">edit_icon</Icon>
               </Button>
             </TableCell>
-            <TableCell className="table__body__cell">
+            <TableCell className="table__body__cell cell-control">
               <Button variant="fab" aria-label="Delete" className="btn btn-delete"
                       onClick={((e) => this.onDelete(e, profile))}
               >
-                <Icon>delete_icon</Icon>
+                <Icon className="i-delete">delete_icon</Icon>
               </Button>
             </TableCell>
           </TableRow>
