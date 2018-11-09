@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './MainContainer.less';
 import Header from '../../components/Header/Header';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import PageContainer from '../PageContainer/PageContainer';
+import PageContainer from '../PageEmployeesContainer/PageEmployeesContainer';
 import { getProfiles } from '../../actions/ProfilesAction';
 import connect from 'react-redux/es/connect/connect';
 

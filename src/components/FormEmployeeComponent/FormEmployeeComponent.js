@@ -1,17 +1,35 @@
 import React, { Component } from 'react';
-import './FormAddComponent.less';
+import './FormEmployeeComponent.less';
 import { Button, Icon, MenuItem, Input, Select, FormControl } from '@material-ui/core';
 
-class FormAddComponent extends Component {
-  state = {
-    name: '',
-    position: '',
-    dateOfBirth: '',
-    hireDate: '',
-    address: '',
-    city: '',
-    country: '',
-  };
+class FormEmployeeComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: props.employee.name,
+      position: props.employee.position,
+      dateOfBirth: props.employee.dateOfBirth,
+      hireDate: props.employee.hireDate,
+      address: props.employee.address,
+      city: props.employee ? "" : props.employee.city,
+      country: props.employee ? "" : props.employee.country,
+    };
+  }
+
+
+
+  //   componentDidMount() {
+  //   const {employee} = this.props;
+  //   this.setState({
+  //     name: employee.name,
+  //     position: employee.position,
+  //     dateOfBirth: employee.dateOfBirth,
+  //     hireDate: employee.hireDate,
+  //     address: employee.address,
+  //     city: "" ,
+  //     country: ""
+  //   })
+  // }
 
   renderMenuItemCity = () => {
     const cities = ['London', 'New York', 'Kiev'];
@@ -32,20 +50,23 @@ class FormAddComponent extends Component {
   };
 
   handleValueChange = name => event => {
-    this.setState({
-      [name]: event.target.value,
-    });
+      this.setState({
+        [name]: event.target.value,
+      });
+
   };
 
-  onSubmit = (e) => {
-    e.preventDefault()
-    const name = this.state.name;
-    const position = this.state.position;
-    const dateOfBirth = this.state.dateOfBirth;
-    const hireDate = this.state.hireDate;
-    const address = this.state.address;
-    const city = this.state.city;
-    const country = this.state.country;
+  onSave = (e) => {
+    e.preventDefault();
+    const {
+      name,
+      position,
+      dateOfBirth,
+      hireDate,
+      address,
+      city,
+      country,
+    } = this.state;
 
     const newEmployee = {
       id: this.props.generateEmployeeID,
@@ -59,6 +80,36 @@ class FormAddComponent extends Component {
     };
 
     this.props.handleSave(newEmployee);
+
+  };
+
+  onUpdate = (e) => {
+    e.preventDefault();
+    const {
+      name,
+      position,
+      dateOfBirth,
+      hireDate,
+      address,
+      city,
+      country,
+    } = this.state;
+
+    const updatedEmployee = {
+      name,
+      position,
+      dateOfBirth,
+      hireDate,
+      address,
+      city,
+      country,
+    };
+
+    this.props.handleUpdate(updatedEmployee);
+  };
+
+  onClose = () => {
+    this.props.handleClose(false);
   };
 
   render() {
@@ -72,8 +123,10 @@ class FormAddComponent extends Component {
       country,
     } = this.state;
 
+    const {isEdit} = this.props;
+
     return (
-        <form className="form-container" noValidate autoComplete="off" onSubmit={this.onSubmit}>
+        <form id="form-employee" className="form-container" noValidate autoComplete="off">
           <FormControl>
             <Input
                 required
@@ -125,7 +178,9 @@ class FormAddComponent extends Component {
                 value={city}
                 onChange={this.handleValueChange('city')}
             >
-              <MenuItem value="" disabled>City</MenuItem>
+              <MenuItem value="" disabled={!isEdit}>
+                City
+              </MenuItem>
               {this.renderMenuItemCity()}
             </Select>
           </FormControl>
@@ -139,17 +194,30 @@ class FormAddComponent extends Component {
                 value={country}
                 onChange={this.handleValueChange('country')}
             >
-              <MenuItem value="" disabled>Country</MenuItem>
+              <MenuItem value="" disabled={!isEdit}>
+                Country
+              </MenuItem>
               {this.renderMenuItemCountry()}
             </Select>
           </FormControl>
 
           <div className="form__controls">
-            <Button type="submit" variant="outlined" className="btn btn-save">
-              <Icon className="i-check">check</Icon>
-              Save
-            </Button>
-            <Button type="button" variant="outlined" className="btn btn-cancel" onClick={this.props.onClose}>
+            {!isEdit ?
+                (
+                    <Button type="submit" variant="outlined" className="btn btn-save" onClick={this.onSave}>
+                      <Icon className="i-check">check</Icon>
+                      Save
+                    </Button>
+                ) :
+                (
+                    <Button type="submit" variant="outlined" className="btn btn-update" onClick={this.onUpdate}>
+                      <Icon className="i-update">edit_icon</Icon>
+                      Update
+                    </Button>
+                )
+            }
+
+            <Button type="button" variant="outlined" className="btn btn-cancel" onClick={this.onClose}>
               <Icon className="i-close">close</Icon>
               Cancel
             </Button>
@@ -159,4 +227,4 @@ class FormAddComponent extends Component {
   }
 }
 
-export default FormAddComponent;
+export default FormEmployeeComponent;

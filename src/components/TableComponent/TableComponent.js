@@ -5,7 +5,9 @@ import { Table, TableBody, TableCell, TableHead, TableRow, Button, Icon } from '
 class TableComponent extends Component {
 
   onEdit = (e, profile) => {
-    console.log(profile)
+    const {handleEditEmployee} = this.props;
+    handleEditEmployee(profile, true);
+    this.props.handleGetEmployeeID(profile.id);
   };
 
   onDelete = (e, employee) => {
@@ -29,7 +31,7 @@ class TableComponent extends Component {
             <TableCell className="table__body__cell">{profile.position}</TableCell>
             <TableCell className="table__body__cell">{dateOfBirth}</TableCell>
             <TableCell className="table__body__cell">{hireDate}</TableCell>
-            <TableCell className="table__body__cell cell__address">{profile.address}</TableCell>
+            <TableCell className="table__body__cell cell-address">{profile.address}</TableCell>
             <TableCell className="table__body__cell">{profile.city}</TableCell>
             <TableCell className="table__body__cell">{profile.country}</TableCell>
             <TableCell className="table__body__cell cell-control">

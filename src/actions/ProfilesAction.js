@@ -61,8 +61,15 @@ export const addEmployee = newEmployee => {
   }
 };
 
-
-
+export const updateEmployee = (employeeID, editedEmployee) => {
+  axios.put(`${url}/${employeeID}`, editedEmployee)
+      .then((res) => {
+        console.log(res)
+      })
+      .catch(() => {
+        return new Error('failed')
+      });
+};
 
 export const deleteEmployee = employeeID => {
   return dispatch => {

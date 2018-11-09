@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
-import './ModalAdd.less';
-import { Modal, Button, Icon } from '@material-ui/core';
-import FormAddComponent from '../FormAddComponent/FormAddComponent'
+import './ModalEmployee.less';
+import { Modal } from '@material-ui/core';
+import FormEmployeeComponent from '../FormEmployeeComponent/FormEmployeeComponent'
 import connect from 'react-redux/es/connect/connect';
 import { addEmployee } from '../../actions/ProfilesAction';
 
-class ModalAdd extends Component {
-  state = {
-    open: false,
+class ModalEmployee extends Component {
+
+  handleClose = (isClose) => {
+    this.props.handleCloseModal(isClose);
   };
 
-  handleOpen = () => {
-    this.setState({open: true});
-  };
-
-  handleClose = () => {
-    this.setState({open: false});
-  };
-
-  handleSave = newEmployee => {
+  handleSave = (newEmployee) => {
     this.props.addEmployee(newEmployee);
-    this.setState(({open: false}))
+    this.props.handleCloseModal(false);
+  };
+
+  handleUpdate = (updatedEmployee) => {
+    this.props.handleUpdateEmployeeModal(updatedEmployee);
   };
 
   generateEmployeeID = () => {
@@ -32,30 +29,25 @@ class ModalAdd extends Component {
   };
 
   render() {
+    const {isOpen, employee, isEdit} = this.props;
     return (
         <div>
-          <div className="modal-control">
-            <p className="modal-control__title">
-              Employees
-            </p>
-            <Button variant="outlined" className="btn btn-add" onClick={this.handleOpen}>
-              <Icon className="i-add">add</Icon>
-              Add
-            </Button>
-          </div>
           <Modal
               aria-labelledby="simple-modal-title"
               aria-describedby="simple-modal-description"
-              open={this.state.open}
+              open={isOpen}
               onClose={this.handleClose}
           >
             <div className="modal-container">
               <h1 className="modal-container__title">
                 Adding new employee
               </h1>
-              <FormAddComponent
-                  onClose={this.handleClose}
+              <FormEmployeeComponent
+                  employee={employee}
+                  isEdit={isEdit}
+                  handleClose={this.handleClose}
                   handleSave={this.handleSave}
+                  handleUpdate={this.handleUpdate}
                   generateEmployeeID={this.generateEmployeeID}
               />
             </div>
@@ -65,12 +57,6 @@ class ModalAdd extends Component {
   }
 }
 
-const mapStateToProps = store => {
-  return {
-    profiles: store.profilesReducer.profiles
-  }
-};
-
 const mapDispatchToProps = dispatch => {
   return {
     addEmployee: newEmployee => dispatch(addEmployee(newEmployee)),
@@ -78,6 +64,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
-) (ModalAdd);
+) (ModalEmployee);
