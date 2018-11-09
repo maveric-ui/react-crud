@@ -6,7 +6,7 @@ export const PROFILES_REQUEST_FAIL = "PROFILES_REQUEST_FAIL";
 export const EMPLOYEE_ADD = "EMPLOYEE_ADD";
 export const PROFILES_SEARCH = "PROFILES_SEARCH";
 export const EMPLOYEE_DELETE = "EMPLOYEE_DELETE";
-
+export const EMPLOYEE_UPDATE = "EMPLOYEE_UPDATE";
 
 const url = 'http://localhost:3200/profiles';
 
@@ -62,13 +62,19 @@ export const addEmployee = newEmployee => {
 };
 
 export const updateEmployee = (employeeID, editedEmployee) => {
-  axios.put(`${url}/${employeeID}`, editedEmployee)
-      .then((res) => {
-        console.log(res)
-      })
-      .catch(() => {
-        return new Error('failed')
-      });
+  return dispatch => {
+    axios.put(`${url}/${employeeID}`, editedEmployee)
+        .then((res) => {
+          dispatch({
+            type: EMPLOYEE_UPDATE,
+            payload:res.data
+          });
+        })
+        .catch(() => {
+          return new Error('failed')
+        });
+  }
+
 };
 
 export const deleteEmployee = employeeID => {
