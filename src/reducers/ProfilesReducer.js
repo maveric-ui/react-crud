@@ -27,19 +27,11 @@ export const profilesReducer = (state = initialState, action) => {
       return {...state, profiles: [...state.profiles, action.payload.data]};
 
     case EMPLOYEE_UPDATE:
-      const updateProfile = state.profiles.map((profile) => {
-        if(profile.id === action.payload.id){
-          return profile.assign(action.payload)
-        }
-      });
-
-      return {...state, profiles: updateProfile};
+      return {...state, profiles: state.profiles
+            .map((profile) => profile.id === action.payload.id ? action.payload : profile)};
 
     case EMPLOYEE_DELETE:
-      const filterProfiles = state.profiles.filter((profile) => {
-        return profile.id !== action.payload
-      });
-      return {...state, profiles: filterProfiles};
+      return {...state, profiles: state.profiles.filter((profile) =>  profile.id !== action.payload)};
 
     case PROFILES_REQUEST_FAIL:
       return {...state, isLoading: false, error: action.payload};

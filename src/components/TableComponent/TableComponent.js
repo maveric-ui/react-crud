@@ -5,9 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableRow, Button, Icon } from '
 class TableComponent extends Component {
 
   onEdit = (e, profile) => {
-    const {handleEditEmployee} = this.props;
-    handleEditEmployee(profile, true);
-    this.props.handleGetEmployeeID(profile.id);
+    this.props.handleEditEmployee(profile);
   };
 
   onDelete = (e, employee) => {

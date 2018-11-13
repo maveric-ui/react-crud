@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Sidebar.less';
+import './SidebarComponent.less';
 
-class Sidebar extends Component {
+class SidebarComponent extends Component {
   renderImgOne = () => {
     return (
         <svg className="img__one" xmlns="http://www.w3.org/2000/svg" width="21" height="19" viewBox="0 0 21 19">
@@ -57,7 +57,7 @@ class Sidebar extends Component {
 
   render() {
     return (
-          <div className="container-sidebar">
+          <div className="sidebar-container">
             <ul className="sidebar__list">
               <li className="sidebar__item">
                 <a href="table" className="active">{this.renderImgOne()}</a>
@@ -77,4 +77,4 @@ class Sidebar extends Component {
   }
 }
 
-export default Sidebar
+export default SidebarComponent

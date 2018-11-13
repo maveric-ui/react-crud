@@ -6,18 +6,33 @@ import connect from 'react-redux/es/connect/connect';
 import { addEmployee } from '../../actions/ProfilesAction';
 
 class ModalEmployee extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+  }
 
-  handleClose = (isClose) => {
-    this.props.handleCloseModal(isClose);
+  componentDidMount() {
+    this.props.openModal(this.handleOpen);
+  }
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false})
   };
 
   handleSave = (newEmployee) => {
     this.props.addEmployee(newEmployee);
-    this.props.handleCloseModal(false);
+    this.handleClose();
   };
 
   handleUpdate = (updatedEmployee) => {
     this.props.handleUpdateEmployeeModal(updatedEmployee);
+    this.handleClose();
   };
 
   generateEmployeeID = () => {
@@ -29,22 +44,21 @@ class ModalEmployee extends Component {
   };
 
   render() {
-    const {isOpen, employee, isEdit} = this.props;
+    const {employee} = this.props;
     return (
         <div>
           <Modal
               aria-labelledby="simple-modal-title"
               aria-describedby="simple-modal-description"
-              open={isOpen}
+              open={this.state.open}
               onClose={this.handleClose}
           >
             <div className="modal-container">
               <h1 className="modal-container__title">
-                Adding new employee
+                {!Object.keys(employee).length ? "Adding new employee" : "Editing employee"}
               </h1>
               <FormEmployeeComponent
                   employee={employee}
-                  isEdit={isEdit}
                   handleClose={this.handleClose}
                   handleSave={this.handleSave}
                   handleUpdate={this.handleUpdate}

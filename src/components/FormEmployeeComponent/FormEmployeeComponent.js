@@ -2,34 +2,21 @@ import React, { Component } from 'react';
 import './FormEmployeeComponent.less';
 import { Button, Icon, MenuItem, Input, Select, FormControl } from '@material-ui/core';
 
+let employeeLength;
 class FormEmployeeComponent extends Component {
   constructor(props) {
     super(props);
+    employeeLength = Object.keys(props.employee).length;
     this.state = {
-      name: props.employee.name,
-      position: props.employee.position,
-      dateOfBirth: props.employee.dateOfBirth,
-      hireDate: props.employee.hireDate,
-      address: props.employee.address,
-      city: props.employee ? "" : props.employee.city,
-      country: props.employee ? "" : props.employee.country,
+      name: !employeeLength ? "" : props.employee.name,
+      position: !employeeLength ? "" : props.employee.position,
+      dateOfBirth: !employeeLength ? "" : props.employee.dateOfBirth,
+      hireDate: !employeeLength ? "" : props.employee.hireDate,
+      address: !employeeLength ? "" : props.employee.address,
+      city: !employeeLength ? "" : props.employee.city,
+      country: !employeeLength ? "" : props.employee.country
     };
   }
-
-
-
-  //   componentDidMount() {
-  //   const {employee} = this.props;
-  //   this.setState({
-  //     name: employee.name,
-  //     position: employee.position,
-  //     dateOfBirth: employee.dateOfBirth,
-  //     hireDate: employee.hireDate,
-  //     address: employee.address,
-  //     city: "" ,
-  //     country: ""
-  //   })
-  // }
 
   renderMenuItemCity = () => {
     const cities = ['London', 'New York', 'Kiev'];
@@ -49,24 +36,32 @@ class FormEmployeeComponent extends Component {
     })
   };
 
-  handleValueChange = name => event => {
-      this.setState({
-        [name]: event.target.value,
-      });
+  renderControls = () => {
+    if (!employeeLength) {
+      return (
+          <Button type="submit" variant="outlined" className="btn btn-save" onClick={this.onSave}>
+            <Icon className="i-check">check</Icon>
+            Save
+          </Button>
+      )
+    } else {
+      return (
+          <Button type="submit" variant="outlined" className="btn btn-update" onClick={this.onUpdate}>
+            <Icon className="i-update">edit_icon</Icon>
+            Update
+          </Button>
+      )
+    }
 
+  };
+
+  handleValueChange = name => event => {
+    this.setState({[name]: event.target.value});
   };
 
   onSave = (e) => {
     e.preventDefault();
-    const {
-      name,
-      position,
-      dateOfBirth,
-      hireDate,
-      address,
-      city,
-      country,
-    } = this.state;
+    const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
 
     const newEmployee = {
       id: this.props.generateEmployeeID,
@@ -80,20 +75,11 @@ class FormEmployeeComponent extends Component {
     };
 
     this.props.handleSave(newEmployee);
-
   };
 
   onUpdate = (e) => {
     e.preventDefault();
-    const {
-      name,
-      position,
-      dateOfBirth,
-      hireDate,
-      address,
-      city,
-      country,
-    } = this.state;
+    const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
 
     const updatedEmployee = {
       name,
@@ -109,28 +95,17 @@ class FormEmployeeComponent extends Component {
   };
 
   onClose = () => {
-    this.props.handleClose(false);
+    this.props.handleClose();
   };
 
   render() {
-    const {
-      name,
-      position,
-      dateOfBirth,
-      hireDate,
-      address,
-      city,
-      country,
-    } = this.state;
-
-    const {isEdit} = this.props;
+    const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
 
     return (
         <form id="form-employee" className="form-container" noValidate autoComplete="off">
           <FormControl>
             <Input
                 required
-                id="employee-name"
                 placeholder="Name"
                 type="input"
                 className="form__field"
@@ -139,7 +114,6 @@ class FormEmployeeComponent extends Component {
             />
           </FormControl>
           <Input
-              id="employee-position"
               placeholder="Position"
               className="form__field"
               value={position}
@@ -147,22 +121,19 @@ class FormEmployeeComponent extends Component {
           />
           <Input
               required
-              id="employee-dateOfBirth"
               type="date"
-              className="form__field date-piker"
+              className="form__field"
               value={dateOfBirth}
               onChange={this.handleValueChange('dateOfBirth')}
           />
           <Input
               required
-              id="employee-hireDate"
               type="date"
-              className="form__field date-piker"
+              className="form__field"
               value={hireDate}
               onChange={this.handleValueChange('hireDate')}
           />
           <Input
-              id="employee-address"
               type="input"
               placeholder="Address"
               className="form__field"
@@ -171,14 +142,20 @@ class FormEmployeeComponent extends Component {
           />
           <FormControl>
             <Select
-                id="employee-city"
                 name="city"
-                className="form__field"
                 displayEmpty
+                className="form__field"
                 value={city}
                 onChange={this.handleValueChange('city')}
+                renderValue={value => {
+                  if (!value) {
+                    return "City";
+                  }
+                  return city
+                }
+                }
             >
-              <MenuItem value="" disabled={!isEdit}>
+              <MenuItem value="" disabled>
                 City
               </MenuItem>
               {this.renderMenuItemCity()}
@@ -187,14 +164,20 @@ class FormEmployeeComponent extends Component {
           <FormControl>
             <Select
                 required
-                id="employee-country"
+                displayEmpty
                 name="country"
                 className="form__field"
-                displayEmpty
                 value={country}
                 onChange={this.handleValueChange('country')}
+                renderValue={value => {
+                  if (!value) {
+                    return "Country";
+                  }
+                  return country
+                }
+                }
             >
-              <MenuItem value="" disabled={!isEdit}>
+              <MenuItem value="" disabled>
                 Country
               </MenuItem>
               {this.renderMenuItemCountry()}
@@ -202,21 +185,7 @@ class FormEmployeeComponent extends Component {
           </FormControl>
 
           <div className="form__controls">
-            {!isEdit ?
-                (
-                    <Button type="submit" variant="outlined" className="btn btn-save" onClick={this.onSave}>
-                      <Icon className="i-check">check</Icon>
-                      Save
-                    </Button>
-                ) :
-                (
-                    <Button type="submit" variant="outlined" className="btn btn-update" onClick={this.onUpdate}>
-                      <Icon className="i-update">edit_icon</Icon>
-                      Update
-                    </Button>
-                )
-            }
-
+            {this.renderControls()}
             <Button type="button" variant="outlined" className="btn btn-cancel" onClick={this.onClose}>
               <Icon className="i-close">close</Icon>
               Cancel

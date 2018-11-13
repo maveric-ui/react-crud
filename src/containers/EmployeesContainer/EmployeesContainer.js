@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './PageEmployeesContainer.less';
+import './EmployeesContainer.less';
 import TableComponent from '../../components/TableComponent/TableComponent';
 import Loader from 'react-loader-spinner'
 import connect from 'react-redux/es/connect/connect';
@@ -7,45 +7,25 @@ import { deleteEmployee, updateEmployee } from '../../actions/ProfilesAction';
 import ModalEmployee from '../../components/ModalEmployee/ModalEmployee';
 import { Button, Icon } from '@material-ui/core';
 
-class PageEmployeesContainer extends Component {
-  state = {
-    employee: {},
-    isOpen: false,
-    isEdit: false
-  };
+class EmployeesContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      employee: {},
+    };
+  }
 
   componentDidMount() {
     this.props.getProfiles();
   }
 
-  onOpenModal = () => {
-    this.setState({
-      employee: {},
-      isOpen: true,
-      isEdit: false
-    })
-  };
-
-  handleEditEmployee = (employee, isOpen) => {
-    this.setState({
-      employee: employee,
-      isOpen: isOpen,
-      isEdit: isOpen
-    });
-  };
-
-  handleGetEmployeeID = (employeeID) => {
-    return employeeID;
+  handleEditEmployee = (employee) => {
+    this.setState({employee: employee});
+    this.onOpen();
   };
 
   handleUpdateEmployeeModal = (updatedEmployee) => {
     this.props.updateEmployee(this.state.employee.id, updatedEmployee);
-  };
-
-  handleCloseModal = (isClose) => {
-    this.setState({
-      isOpen: isClose
-    })
   };
 
   renderLoadingTemplate = () => {
@@ -64,35 +44,32 @@ class PageEmployeesContainer extends Component {
 
   render() {
     const {profiles, isLoading, deleteEmployee} = this.props;
-    const {isOpen, employee, isEdit} = this.state;
+    const {employee} = this.state;
 
     return (
-        <div className="page-employees">
+        <div className="employees-container">
           {isLoading ? this.renderLoadingTemplate() :
               (
                   <React.Fragment>
-                    <div className="employees-control">
-                      <p className="employees-control__title">
+                    <ModalEmployee
+                        openModal={handleOpen => this.onOpen = handleOpen}
+                        profiles={profiles}
+                        employee={employee}
+                        handleUpdateEmployeeModal={this.handleUpdateEmployeeModal}
+                    />
+
+                    <div className="employees-header">
+                      <p className="employees-header__title">
                         Employees
                       </p>
                       <Button variant="outlined" className="btn btn-add"
-                              onClick={this.onOpenModal}
-                      >
+                              onClick={() => this.onOpen()}>
                         <Icon className="i-add">add</Icon>
                         Add
                       </Button>
                     </div>
-                    <ModalEmployee
-                        profiles={profiles}
-                        employee={employee}
-                        isOpen={isOpen}
-                        isEdit={isEdit}
-                        handleCloseModal={this.handleCloseModal}
-                        handleUpdateEmployeeModal={this.handleUpdateEmployeeModal}
-                    />
                     <TableComponent
                         profiles={profiles}
-                        handleGetEmployeeID={this.handleGetEmployeeID}
                         deleteEmployee={deleteEmployee}
                         handleEditEmployee={this.handleEditEmployee}
                     />
@@ -106,7 +83,7 @@ class PageEmployeesContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateEmployee: (employeeID, editedEmployee) => updateEmployee(employeeID, editedEmployee),
+    updateEmployee: (employeeID, editedEmployee) => dispatch(updateEmployee(employeeID, editedEmployee)),
     deleteEmployee: employeeID => dispatch(deleteEmployee(employeeID))
   }
 };
@@ -114,4 +91,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     null,
     mapDispatchToProps,
-)(PageEmployeesContainer)
+)(EmployeesContainer)

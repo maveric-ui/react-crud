@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './MainContainer.less';
 import Header from '../../components/Header/Header';
-import Sidebar from '../../components/Sidebar/Sidebar';
-import PageContainer from '../PageEmployeesContainer/PageEmployeesContainer';
+import SidebarComponent from '../../components/SidebarComponent/SidebarComponent';
+import PageContainer from '../EmployeesContainer/EmployeesContainer';
 import { getProfiles } from '../../actions/ProfilesAction';
 import connect from 'react-redux/es/connect/connect';
 
@@ -11,10 +11,10 @@ class MainContainer extends Component {
     const { profiles, getProfiles, isLoading } = this.props;
 
     return (
-        <div className="main-container">
+        <div className="root-container">
           <Header/>
-          <div className="main-content">
-            <Sidebar/>
+          <div className="main-container">
+            <SidebarComponent/>
             <PageContainer
                 profiles={profiles}
                 getProfiles={getProfiles}
