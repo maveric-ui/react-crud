@@ -21,19 +21,34 @@
       border-bottom: none;
       padding: 10px 20px;
 
+
       .table__head__cell-sort {
         display: flex;
         flex-direction: row;
         align-items: center;
+
+        .btn {
+          background-color: transparent;
+          padding: 0;
+          outline: none;
+          cursor: pointer;
+          border: none;
+        }
+
+        .btn-sort {
+          margin-left: 5px;
+
+          .i-sort {
+            display: block;
+            width: 13px;
+            height: 8px;
+            background: url("./../../assets/img/arrow.svg") no-repeat;
+            flex: none;
+          }
+        }
       }
 
-      .i-sort {
-        width: 13px;
-        height: 8px;
-        background: url("./../../assets/img/arrow.svg") no-repeat;
-        margin-left: 5px;
-        flex: none;
-      }
+
     }
   }
 

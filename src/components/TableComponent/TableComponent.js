@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import './TableComponent.less';
 import { Table, TableBody, TableCell, TableHead, TableRow, Button, Icon } from '@material-ui/core';
 
+
 class TableComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      profiles: props.profiles,
+    }
+  }
 
   onEdit = (e, profile) => {
     this.props.handleEditEmployee(profile);
@@ -10,6 +17,24 @@ class TableComponent extends Component {
 
   onDelete = (e, employee) => {
     this.props.deleteEmployee(employee.id);
+  };
+
+  handleSort = (orderBy) => {
+    const {profiles} = this.props;
+    function compare(a,b) {
+      if(a[orderBy] < b[orderBy]) {
+        return -1;
+      }
+      if(a[orderBy] > b[orderBy]) {
+        return 1;
+      }
+      return 0
+    }
+
+    this.setState({
+      profiles: profiles.sort(compare)
+    })
+
   };
 
   renderTableHeadCells = () => {
@@ -28,10 +53,12 @@ class TableComponent extends Component {
         <TableRow className="table__head__row">
           {rowHead.map((row) => {
             return (
-                <TableCell key={row.id} className="table__head__cell">
+                <TableCell key={row.id} className="table__head__cell" >
                   <span className="table__head__cell-sort">
                     {row.label}
-                    <span className="i-sort"/>
+                    <button className="btn btn-sort" onClick={() => this.handleSort(row.id)}>
+                      <span className="i-sort" />
+                    </button>
                   </span>
                 </TableCell>
 
@@ -42,7 +69,7 @@ class TableComponent extends Component {
   };
 
   renderTableBodyCells = () => {
-    const {profiles} = this.props;
+    const {profiles} = this.state;
     return profiles.map((profile) => {
       const dateOption = {
         day: "numeric",
