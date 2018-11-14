@@ -65,7 +65,6 @@ export const updateEmployee = (employeeID, editedEmployee) => {
   return dispatch => {
     axios.put(`${url}/${employeeID}`, editedEmployee)
         .then((res) => {
-          // console.log(res.data)
           dispatch({
             type: EMPLOYEE_UPDATE,
             payload: res.data

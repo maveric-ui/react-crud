@@ -63,7 +63,7 @@ class EmployeesContainer extends Component {
                         Employees
                       </p>
                       <Button variant="outlined" className="btn btn-add"
-                              onClick={() => this.onOpen()}>
+                              onClick={() => this.onOpen(this.setState({employee: {}}))}>
                         <Icon className="i-add">add</Icon>
                         Add
                       </Button>

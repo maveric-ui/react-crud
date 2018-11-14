@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edf6b073-e3e3-43ae-8253-e0fd8029840d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/profileChahe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/arrow-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/arrow-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/arrow.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/profiles.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/ProfilesAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/ProfilesAction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarComponent/SidebarComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/Sidebar.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarComponent/SidebarComponent.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/MainContainer/MainContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MainContainer/MainContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/MainContainer/MainContainer.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MainContainer/MainContainer.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/PageEmployeesContainer/PageEmployeesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/PageEmployeesContainer/PageEmployeesContainer.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/ProfilesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/ProfilesReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/configStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/configStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,25 +26,26 @@
     <session id="-622936525">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="147" />
+          <entry key="js" value="149" />
           <entry key="json" value="20" />
-          <entry key="less" value="73" />
+          <entry key="less" value="74" />
           <entry key="profileChahe" value="1" />
-          <entry key="svg" value="12" />
+          <entry key="svg" value="16" />
           <entry key="ts" value="15" />
         </counts>
       </usages-collector>
@@ -57,10 +53,10 @@
         <counts>
           <entry key="HTML" value="3" />
           <entry key="JSON" value="20" />
-          <entry key="JavaScript" value="147" />
-          <entry key="Less" value="73" />
+          <entry key="JavaScript" value="149" />
+          <entry key="Less" value="74" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="SVG" value="12" />
+          <entry key="SVG" value="16" />
           <entry key="TypeScript" value="15" />
         </counts>
       </usages-collector>
@@ -68,24 +64,24 @@
         <counts>
           <entry key="gitignore" value="7" />
           <entry key="html" value="9" />
-          <entry key="js" value="23481" />
+          <entry key="js" value="23960" />
           <entry key="json" value="135" />
-          <entry key="less" value="4004" />
-          <entry key="txt" value="222" />
+          <entry key="less" value="4448" />
+          <entry key="txt" value="257" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="9" />
           <entry key="JSON" value="135" />
-          <entry key="JavaScript" value="23481" />
-          <entry key="Less" value="4004" />
-          <entry key="PLAIN_TEXT" value="229" />
+          <entry key="JavaScript" value="23960" />
+          <entry key="Less" value="4448" />
+          <entry key="PLAIN_TEXT" value="264" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="7" />
+          <entry key="ESLintLanguageService" value="8" />
           <entry key="TypeScriptServerServiceImpl" value="4" />
         </counts>
       </usages-collector>
@@ -96,32 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+            <state relative-caret-position="458">
+              <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -132,11 +104,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+            <state relative-caret-position="374">
+              <caret line="31" column="57" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="57" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -164,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/Sidebar/Sidebar.less" />
-        <option value="$PROJECT_DIR$/src/components/Table/Table.js" />
         <option value="$PROJECT_DIR$/src/actions/TableData.js" />
         <option value="$PROJECT_DIR$/src/actions/ProfileData.js" />
         <option value="$PROJECT_DIR$/src/reducers/profiles.js" />
@@ -191,7 +170,6 @@
         <option value="$PROJECT_DIR$/src/components/FormAddComponent/FormAddComponent.js" />
         <option value="$PROJECT_DIR$/src/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/src/components/SearchComponent/SearchComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.less" />
         <option value="$PROJECT_DIR$/src/containers/PageContainer/PageContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/PageEmployeeContainer/PageEmployeeContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/PageProfilesContainer/PageProfilesContainer.js" />
@@ -199,7 +177,6 @@
         <option value="$PROJECT_DIR$/src/store/configStore.js" />
         <option value="$PROJECT_DIR$/profiles.json" />
         <option value="$PROJECT_DIR$/profileChahe" />
-        <option value="$PROJECT_DIR$/src/actions/ProfilesAction.js" />
         <option value="$PROJECT_DIR$/src/reducers/ProfilesReducer.js" />
         <option value="$PROJECT_DIR$/src/containers/MainContainer/MainContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/MainContainer/MainContainer.less" />
@@ -211,10 +188,14 @@
         <option value="$PROJECT_DIR$/src/components/SidebarComponent/SidebarComponent.less" />
         <option value="$PROJECT_DIR$/src/index.less" />
         <option value="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.less" />
-        <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js" />
-        <option value="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js" />
         <option value="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js" />
+        <option value="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js" />
+        <option value="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js" />
+        <option value="$PROJECT_DIR$/src/actions/ProfilesAction.js" />
+        <option value="$PROJECT_DIR$/src/assets/img/arrow-up.svg" />
+        <option value="$PROJECT_DIR$/src/assets/img/arrow-down.svg" />
+        <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.less" />
       </list>
     </option>
   </component>
@@ -248,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,20 +252,6 @@
               <item name="react-crud" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FormEmployeeComponent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ModalEmployee" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
@@ -318,6 +284,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,7 +362,8 @@
       <workItem from="1540984895301" duration="40019000" />
       <workItem from="1541423556798" duration="27448000" />
       <workItem from="1541600663911" duration="39478000" />
-      <workItem from="1542009815477" duration="28700000" />
+      <workItem from="1542009815477" duration="29669000" />
+      <workItem from="1542182767558" duration="9820000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1539182423048</created>
@@ -488,11 +456,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541780404774</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="stable Modal&#10;&#10;TODO: clear form">
+      <created>1542126696981</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1542126696981</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222245000" />
+    <option name="totallyTimeSpent" value="233034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -513,7 +488,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31344903" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31344903" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -522,7 +497,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3286334" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -546,17 +521,10 @@
     <MESSAGE value="stable searching" />
     <MESSAGE value="stable put request&#10;TODO: reducer with action" />
     <MESSAGE value="TODO: reducer with action" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: reducer with action" />
+    <MESSAGE value="stable Modal&#10;&#10;TODO: clear form" />
+    <option name="LAST_COMMIT_MESSAGE" value="stable Modal&#10;&#10;TODO: clear form" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/containers/SidebarContainer.js" />
-    <entry file="file://$PROJECT_DIR$/src/reducers/root.js" />
-    <entry file="file://$PROJECT_DIR$/src/assets/img/logo.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/img/1.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/img/2.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -642,9 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,9 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -672,13 +634,6 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -728,9 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -782,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/ProfilesAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -800,9 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -813,10 +755,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        <state relative-caret-position="255">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -825,31 +767,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="97" column="29" lean-forward="true" selection-start-line="97" selection-start-column="29" selection-end-line="97" selection-end-column="29" />
+        <state relative-caret-position="-476">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/ProfilesAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="976">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/img/arrow-up.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/img/arrow-down.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/img/arrow.svg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        <state relative-caret-position="458">
+          <caret line="65" column="30" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js">
+    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/arrow.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="374">
+          <caret line="31" column="57" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="57" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
         </state>
       </provider>
     </entry>

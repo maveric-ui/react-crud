@@ -12,6 +12,35 @@ class TableComponent extends Component {
     this.props.deleteEmployee(employee.id);
   };
 
+  renderTableHeadCells = () => {
+    const rowHead = [
+      {id: "id", label: "id"},
+      {id: "name", label: "name"},
+      {id: "position", label: "position"},
+      {id: "dateOfBirth", label: "date of birth"},
+      {id: "hireDate", label: "hire date"},
+      {id: "address", label: "address"},
+      {id: "city", label: "city"},
+      {id: "country", label: "country"},
+    ];
+
+    return (
+        <TableRow className="table__head__row">
+          {rowHead.map((row) => {
+            return (
+                <TableCell key={row.id} className="table__head__cell">
+                  <span className="table__head__cell-sort">
+                    {row.label}
+                    <span className="i-sort"/>
+                  </span>
+                </TableCell>
+
+            )
+          })}
+        </TableRow>
+    )
+  };
+
   renderTableBodyCells = () => {
     const {profiles} = this.props;
     return profiles.map((profile) => {
@@ -33,14 +62,14 @@ class TableComponent extends Component {
             <TableCell className="table__body__cell">{profile.city}</TableCell>
             <TableCell className="table__body__cell">{profile.country}</TableCell>
             <TableCell className="table__body__cell cell-control">
-              <Button variant="fab" aria-label="Edit" className="btn btn-edit"
+              <Button variant="fab" aria-label="edit" className="btn btn-edit"
                       onClick={((e) => this.onEdit(e, profile))}
               >
                 <Icon className="i-edit">edit_icon</Icon>
               </Button>
             </TableCell>
             <TableCell className="table__body__cell cell-control">
-              <Button variant="fab" aria-label="Delete" className="btn btn-delete"
+              <Button variant="fab" aria-label="delete" className="btn btn-delete"
                       onClick={((e) => this.onDelete(e, profile))}
               >
                 <Icon className="i-delete">delete_icon</Icon>
@@ -56,16 +85,7 @@ class TableComponent extends Component {
         <div className="root-table">
           <Table className="table">
             <TableHead className="table__head">
-              <TableRow className="table__head__row">
-                <TableCell className="table__head__cell">id</TableCell>
-                <TableCell className="table__head__cell">name</TableCell>
-                <TableCell className="table__head__cell">position</TableCell>
-                <TableCell className="table__head__cell">date of birth</TableCell>
-                <TableCell className="table__head__cell">hire date</TableCell>
-                <TableCell className="table__head__cell">address</TableCell>
-                <TableCell className="table__head__cell">city</TableCell>
-                <TableCell className="table__head__cell">country</TableCell>
-              </TableRow>
+              {this.renderTableHeadCells()}
             </TableHead>
             <TableBody className="table__body">
               {this.renderTableBodyCells()}
