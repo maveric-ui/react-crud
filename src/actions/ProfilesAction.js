@@ -7,6 +7,7 @@ export const EMPLOYEE_ADD = "EMPLOYEE_ADD";
 export const PROFILES_SEARCH = "PROFILES_SEARCH";
 export const EMPLOYEE_DELETE = "EMPLOYEE_DELETE";
 export const EMPLOYEE_UPDATE = "EMPLOYEE_UPDATE";
+export const PROFILES_SORT = "PROFILES_SORT";
 
 const url = 'http://localhost:3200/profiles';
 
@@ -16,21 +17,22 @@ export const getProfiles = () => {
       type: PROFILES_REQUEST
     });
 
-    const getProfiles = axios.get(url)
-        .then((response) => {
-          dispatch({
-            type: PROFILES_REQUEST_SUCCESS,
-            payload: response.data,
-          });
-        })
-        .catch(() => {
-          dispatch({
-            type: PROFILES_REQUEST_FAIL,
-            error: true,
-            payload: new Error('failed'),
+    setTimeout(() => {
+      axios.get(url)
+          .then((response) => {
+            dispatch({
+              type: PROFILES_REQUEST_SUCCESS,
+              payload: response.data,
+            });
           })
-        });
-    setTimeout(() => getProfiles, 1500);
+          .catch(() => {
+            dispatch({
+              type: PROFILES_REQUEST_FAIL,
+              error: true,
+              payload: new Error('failed'),
+            })
+          });
+    }, 1500);
   }
 };
 
@@ -47,6 +49,17 @@ export const searchEmployee = (searchKey) => {
           return new Error('failed')
         });
   }
+};
+
+export const sortEmployee = (order, orderBy, profiles) => {
+    return dispatch => {
+      dispatch ({
+        type: PROFILES_SORT,
+        order: order,
+        orderBy: orderBy,
+        profiles: profiles
+      })
+    }
 };
 
 export const addEmployee = newEmployee => {

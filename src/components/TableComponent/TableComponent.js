@@ -7,7 +7,7 @@ class TableComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      profiles: props.profiles,
+      order: "",
     }
   }
 
@@ -19,22 +19,23 @@ class TableComponent extends Component {
     this.props.deleteEmployee(employee.id);
   };
 
-  handleSort = (orderBy) => {
-    const {profiles} = this.props;
-    function compare(a,b) {
-      if(a[orderBy] < b[orderBy]) {
-        return -1;
-      }
-      if(a[orderBy] > b[orderBy]) {
-        return 1;
-      }
-      return 0
+  onSort = (e, orderBy) => {
+    const {order} = this.state;
+    const {sortEmployee, profiles} = this.props;
+
+    if(order === "") {
+       this.setState({order: "asc"});
+       e.currentTarget.className = "btn btn-sort sorted-up";
+    } else if(order === "asc") {
+      this.setState({order: "desc"});
+      e.currentTarget.className = "btn btn-sort sorted-down";
+
+    } else if(order === "desc") {
+      this.setState({order: ""});
+      e.currentTarget.className = "btn btn-sort";
     }
 
-    this.setState({
-      profiles: profiles.sort(compare)
-    })
-
+    sortEmployee(order, orderBy, profiles);
   };
 
   renderTableHeadCells = () => {
@@ -53,15 +54,14 @@ class TableComponent extends Component {
         <TableRow className="table__head__row">
           {rowHead.map((row) => {
             return (
-                <TableCell key={row.id} className="table__head__cell" >
+                <TableCell key={row.id} id={row.id} className="table__head__cell" >
                   <span className="table__head__cell-sort">
                     {row.label}
-                    <button className="btn btn-sort" onClick={() => this.handleSort(row.id)}>
-                      <span className="i-sort" />
-                    </button>
+                    <button className={`btn btn-sort`}
+                            onClick={(e) => this.onSort(e, row.id)}
+                    />
                   </span>
                 </TableCell>
-
             )
           })}
         </TableRow>
@@ -69,7 +69,7 @@ class TableComponent extends Component {
   };
 
   renderTableBodyCells = () => {
-    const {profiles} = this.state;
+    const {profiles} = this.props;
     return profiles.map((profile) => {
       const dateOption = {
         day: "numeric",

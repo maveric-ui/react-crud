@@ -3,7 +3,7 @@ import './EmployeesContainer.less';
 import TableComponent from '../../components/TableComponent/TableComponent';
 import Loader from 'react-loader-spinner'
 import connect from 'react-redux/es/connect/connect';
-import { deleteEmployee, updateEmployee } from '../../actions/ProfilesAction';
+import { deleteEmployee, sortEmployee, updateEmployee } from '../../actions/ProfilesAction';
 import ModalEmployee from '../../components/ModalEmployee/ModalEmployee';
 import { Button, Icon } from '@material-ui/core';
 
@@ -43,7 +43,7 @@ class EmployeesContainer extends Component {
   };
 
   render() {
-    const {profiles, isLoading, deleteEmployee} = this.props;
+    const {profiles, isLoading, deleteEmployee, sortEmployee} = this.props;
     const {employee} = this.state;
 
     return (
@@ -72,6 +72,7 @@ class EmployeesContainer extends Component {
                         profiles={profiles}
                         deleteEmployee={deleteEmployee}
                         handleEditEmployee={this.handleEditEmployee}
+                        sortEmployee={sortEmployee}
                     />
                   </React.Fragment>
               )
@@ -83,6 +84,7 @@ class EmployeesContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
+    sortEmployee: (order, orderBy, profiles) => dispatch(sortEmployee(order, orderBy, profiles)),
     updateEmployee: (employeeID, editedEmployee) => dispatch(updateEmployee(employeeID, editedEmployee)),
     deleteEmployee: employeeID => dispatch(deleteEmployee(employeeID))
   }
