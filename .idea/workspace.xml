@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="edf6b073-e3e3-43ae-8253-e0fd8029840d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/ProfilesAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/ProfilesAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/ProfilesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/ProfilesReducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -60,19 +56,19 @@
         <counts>
           <entry key="gitignore" value="7" />
           <entry key="html" value="9" />
-          <entry key="js" value="26861" />
+          <entry key="js" value="26902" />
           <entry key="json" value="135" />
           <entry key="less" value="4618" />
-          <entry key="txt" value="313" />
+          <entry key="txt" value="316" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="9" />
           <entry key="JSON" value="135" />
-          <entry key="JavaScript" value="26861" />
+          <entry key="JavaScript" value="26902" />
           <entry key="Less" value="4618" />
-          <entry key="PLAIN_TEXT" value="320" />
+          <entry key="PLAIN_TEXT" value="323" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -97,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/reducers/ProfilesReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            <state relative-caret-position="447">
+              <caret line="49" column="89" selection-start-line="49" selection-start-column="89" selection-end-line="49" selection-end-column="89" />
               <folding>
                 <element signature="e#0#184#0" expanded="true" />
               </folding>
@@ -394,7 +390,7 @@
       <workItem from="1541423556798" duration="27448000" />
       <workItem from="1541600663911" duration="39478000" />
       <workItem from="1542009815477" duration="29669000" />
-      <workItem from="1542182767558" duration="34358000" />
+      <workItem from="1542182767558" duration="34712000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1539182423048</created>
@@ -508,11 +504,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542204087436</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="upd">
+      <created>1542297112852</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1542297112852</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257572000" />
+    <option name="totallyTimeSpent" value="257926000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -557,7 +560,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Search Component Stable" />
-    <MESSAGE value="upd" />
     <MESSAGE value="add combineReducers" />
     <MESSAGE value="add reducer, action, change form" />
     <MESSAGE value="rewrite reducers, actions" />
@@ -569,7 +571,8 @@
     <MESSAGE value="stable Modal&#10;&#10;TODO: clear form" />
     <MESSAGE value="TODO: sorting , validation form &#10;Stable Modal" />
     <MESSAGE value="sort works" />
-    <option name="LAST_COMMIT_MESSAGE" value="sort works" />
+    <MESSAGE value="upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/assets/img/3.svg">
@@ -871,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/ProfilesReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        <state relative-caret-position="447">
+          <caret line="49" column="89" selection-start-line="49" selection-start-column="89" selection-end-line="49" selection-end-column="89" />
           <folding>
             <element signature="e#0#184#0" expanded="true" />
           </folding>

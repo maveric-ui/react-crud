@@ -26,7 +26,8 @@ export const profilesReducer = (state = initialState, action) => {
       return {...state, profiles: action.payload};
 
     case PROFILES_SORT:
-    const sortProfiles = (orderBy , order, profiles) =>{
+    const sortProfiles = (orderBy, order, profiles) =>{
+      debugger
         function compare(a,b) {
           if(a[orderBy] < b[orderBy]) {
             return -1;
@@ -38,15 +39,15 @@ export const profilesReducer = (state = initialState, action) => {
         }
 
         if(order === "") {
-          return action.profiles.slice().sort(compare);
+          state.profiles = profiles.slice().sort(compare);
         } else if(order === "asc") {
-          return action.profiles.slice().sort(compare).reverse();
+          state.profiles = profiles.slice().sort(compare).reverse();
         } else if(order === "desc") {
-          return action.profiles
+          state.profiles = profiles
         }
       };
 
-      return {...state, profiles: sortProfiles(...state.orderBy , ...state.order, ...state.profiles)};
+      return {...state, profiles: sortProfiles(state.orderBy, state.order, state.profiles)};
 
     case EMPLOYEE_ADD:
       return {...state, profiles: [...state.profiles, action.payload.data]};
