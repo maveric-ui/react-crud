@@ -25,14 +25,14 @@ class TableComponent extends Component {
 
     if(order === "") {
        this.setState({order: "asc"});
-       e.currentTarget.className = "btn btn-sort sorted-up";
+       e.currentTarget.firstElementChild.className = "btn btn-sort sorted-up";
     } else if(order === "asc") {
       this.setState({order: "desc"});
-      e.currentTarget.className = "btn btn-sort sorted-down";
+      e.currentTarget.firstElementChild.className = "btn btn-sort sorted-down";
 
     } else if(order === "desc") {
       this.setState({order: ""});
-      e.currentTarget.className = "btn btn-sort";
+      e.currentTarget.firstElementChild.className = "btn btn-sort";
     }
 
     sortEmployee(order, orderBy, profiles);
@@ -54,12 +54,10 @@ class TableComponent extends Component {
         <TableRow className="table__head__row">
           {rowHead.map((row) => {
             return (
-                <TableCell key={row.id} id={row.id} className="table__head__cell" >
-                  <span className="table__head__cell-sort">
+                <TableCell key={row.id} id={row.id} className="table__head__cell">
+                  <span className="table__head__cell-sort" onClick={(e) => this.onSort(e, row.id)}>
                     {row.label}
-                    <button className={`btn btn-sort`}
-                            onClick={(e) => this.onSort(e, row.id)}
-                    />
+                    <button className={`btn btn-sort`}/>
                   </span>
                 </TableCell>
             )

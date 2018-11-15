@@ -22,12 +22,14 @@ export const profilesReducer = (state = initialState, action) => {
     case PROFILES_REQUEST_SUCCESS:
       return {...state, isLoading: false, profiles: action.payload};
 
+    case PROFILES_REQUEST_FAIL:
+      return {...state, isLoading: false, error: action.payload};
+
     case PROFILES_SEARCH:
       return {...state, profiles: action.payload};
 
     case PROFILES_SORT:
-    const sortProfiles = (orderBy, order, profiles) =>{
-      debugger
+    const sortProfiles = (order, orderBy, profiles) => {
         function compare(a,b) {
           if(a[orderBy] < b[orderBy]) {
             return -1;
@@ -39,15 +41,15 @@ export const profilesReducer = (state = initialState, action) => {
         }
 
         if(order === "") {
-          state.profiles = profiles.slice().sort(compare);
+          return profiles.sort(compare);
         } else if(order === "asc") {
-          state.profiles = profiles.slice().sort(compare).reverse();
+          return profiles.sort(compare).reverse();
         } else if(order === "desc") {
-          state.profiles = profiles
+          return profiles.reverse()
         }
       };
 
-      return {...state, profiles: sortProfiles(state.orderBy, state.order, state.profiles)};
+      return {...state, profiles: sortProfiles(action.order, action.orderBy, action.profiles)};
 
     case EMPLOYEE_ADD:
       return {...state, profiles: [...state.profiles, action.payload.data]};
@@ -59,8 +61,7 @@ export const profilesReducer = (state = initialState, action) => {
     case EMPLOYEE_DELETE:
       return {...state, profiles: state.profiles.filter((profile) =>  profile.id !== action.payload)};
 
-    case PROFILES_REQUEST_FAIL:
-      return {...state, isLoading: false, error: action.payload};
+
 
     default:
       return state

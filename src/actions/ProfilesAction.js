@@ -20,6 +20,7 @@ export const getProfiles = () => {
     setTimeout(() => {
       axios.get(url)
           .then((response) => {
+
             dispatch({
               type: PROFILES_REQUEST_SUCCESS,
               payload: response.data,
@@ -53,11 +54,12 @@ export const searchEmployee = (searchKey) => {
 
 export const sortEmployee = (order, orderBy, profiles) => {
     return dispatch => {
+
       dispatch ({
         type: PROFILES_SORT,
         order: order,
         orderBy: orderBy,
-        profiles: profiles
+        profiles: profiles,
       })
     }
 };
