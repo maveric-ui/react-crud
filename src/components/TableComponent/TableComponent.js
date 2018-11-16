@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TableComponent.less';
-import { Table, TableBody, TableCell, TableHead, TableRow, Button, Icon } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableHead, TableRow, Button, Icon, Tooltip } from '@material-ui/core';
 
 
 class TableComponent extends Component {
@@ -21,21 +21,21 @@ class TableComponent extends Component {
 
   onSort = (e, orderBy) => {
     const {order} = this.state;
-    const {sortEmployee, profiles} = this.props;
+    const {sortEmployee} = this.props;
 
-    if(order === "") {
-       this.setState({order: "asc"});
-       e.currentTarget.firstElementChild.className = "btn btn-sort sorted-up";
-    } else if(order === "asc") {
+    if (order === "") {
+      this.setState({order: "asc"});
+      e.currentTarget.firstElementChild.className = "btn btn-sort sorted-up";
+    } else if (order === "asc") {
       this.setState({order: "desc"});
       e.currentTarget.firstElementChild.className = "btn btn-sort sorted-down";
-
-    } else if(order === "desc") {
+    } else if (order === "desc") {
       this.setState({order: ""});
       e.currentTarget.firstElementChild.className = "btn btn-sort";
+
     }
 
-    sortEmployee(order, orderBy, profiles);
+    sortEmployee(order, orderBy);
   };
 
   renderTableHeadCells = () => {
@@ -55,10 +55,12 @@ class TableComponent extends Component {
           {rowHead.map((row) => {
             return (
                 <TableCell key={row.id} id={row.id} className="table__head__cell">
-                  <span className="table__head__cell-sort" onClick={(e) => this.onSort(e, row.id)}>
-                    {row.label}
-                    <button className={`btn btn-sort`}/>
-                  </span>
+                  <Tooltip title="Sort">
+                    <span className="table__head__cell-sort" onClick={(e) => this.onSort(e, row.id)}>
+                      {row.label}
+                      <button className="btn btn-sort"/>
+                    </span>
+                  </Tooltip>
                 </TableCell>
             )
           })}

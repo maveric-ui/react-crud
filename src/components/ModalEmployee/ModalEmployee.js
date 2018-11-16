@@ -48,6 +48,7 @@ class ModalEmployee extends Component {
     return (
         <div>
           <Modal
+              className="root-modal"
               aria-labelledby="simple-modal-title"
               aria-describedby="simple-modal-description"
               open={this.state.open}

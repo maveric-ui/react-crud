@@ -84,7 +84,7 @@ class EmployeesContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    sortEmployee: (order, orderBy, profiles) => dispatch(sortEmployee(order, orderBy, profiles)),
+    sortEmployee: (order, orderBy) => dispatch(sortEmployee(order, orderBy)),
     updateEmployee: (employeeID, editedEmployee) => dispatch(updateEmployee(employeeID, editedEmployee)),
     deleteEmployee: employeeID => dispatch(deleteEmployee(employeeID))
   }

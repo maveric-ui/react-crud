@@ -45,11 +45,11 @@ export const profilesReducer = (state = initialState, action) => {
         } else if(order === "asc") {
           return profiles.sort(compare).reverse();
         } else if(order === "desc") {
-          return profiles.reverse()
+          return profiles
         }
       };
 
-      return {...state, profiles: sortProfiles(action.order, action.orderBy, action.profiles)};
+      return {...state, profiles: sortProfiles(action.order, action.orderBy, action.payload)};
 
     case EMPLOYEE_ADD:
       return {...state, profiles: [...state.profiles, action.payload.data]};

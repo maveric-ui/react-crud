@@ -52,15 +52,20 @@ export const searchEmployee = (searchKey) => {
   }
 };
 
-export const sortEmployee = (order, orderBy, profiles) => {
+export const sortEmployee = (order, orderBy) => {
     return dispatch => {
-
-      dispatch ({
-        type: PROFILES_SORT,
-        order: order,
-        orderBy: orderBy,
-        profiles: profiles,
-      })
+      axios.get(url)
+          .then((response) => {
+            dispatch ({
+              type: PROFILES_SORT,
+              order: order,
+              orderBy: orderBy,
+              payload: response.data
+            })
+          })
+          .catch(() => {
+            return new Error('failed')
+          });
     }
 };
 
