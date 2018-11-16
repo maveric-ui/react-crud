@@ -16,16 +16,15 @@ export const getProfiles = () => {
     dispatch({
       type: PROFILES_REQUEST
     });
-
-    setTimeout(() => {
       axios.get(url)
-          .then((response) => {
-
-            dispatch({
-              type: PROFILES_REQUEST_SUCCESS,
-              payload: response.data,
-            });
-          })
+          .then((response) => new Promise (() => {
+            setTimeout(() => {
+              dispatch({
+                type: PROFILES_REQUEST_SUCCESS,
+                payload: response.data,
+              });
+            }, 1500)
+          }))
           .catch(() => {
             dispatch({
               type: PROFILES_REQUEST_FAIL,
@@ -33,7 +32,6 @@ export const getProfiles = () => {
               payload: new Error('failed'),
             })
           });
-    }, 1500);
   }
 };
 

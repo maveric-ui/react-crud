@@ -54,14 +54,16 @@ class TableComponent extends Component {
         <TableRow className="table__head__row">
           {rowHead.map((row) => {
             return (
+
                 <TableCell key={row.id} id={row.id} className="table__head__cell">
-                  <Tooltip title="Sort">
+                  <Tooltip title="Sort" placement="bottom-start">
                     <span className="table__head__cell-sort" onClick={(e) => this.onSort(e, row.id)}>
-                      {row.label}
-                      <button className="btn btn-sort"/>
+                        {row.label}
+                        <button className="btn btn-sort"/>
                     </span>
                   </Tooltip>
                 </TableCell>
+
             )
           })}
         </TableRow>

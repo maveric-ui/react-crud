@@ -9,7 +9,7 @@ class ModalEmployee extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false,
+      open: true,
     };
   }
 
@@ -35,14 +35,6 @@ class ModalEmployee extends Component {
     this.handleClose();
   };
 
-  generateEmployeeID = () => {
-    const { profiles } = this.props;
-    return profiles.map((item, index, arr) => {
-      const lastIndex = arr.length - 1;
-      return lastIndex + 1;
-    });
-  };
-
   render() {
     const {employee} = this.props;
     return (
@@ -63,7 +55,6 @@ class ModalEmployee extends Component {
                   handleClose={this.handleClose}
                   handleSave={this.handleSave}
                   handleUpdate={this.handleUpdate}
-                  generateEmployeeID={this.generateEmployeeID}
               />
             </div>
           </Modal>

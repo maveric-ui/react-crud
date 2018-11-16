@@ -61,10 +61,7 @@ class FormEmployeeComponent extends Component {
   onSave = (e) => {
     e.preventDefault();
     const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
-    const newEmployee = {
-      id: this.props.generateEmployeeID,
-      name, position, dateOfBirth, hireDate, address, city, country
-    };
+    const newEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
 
     this.props.handleSave(newEmployee);
   };
