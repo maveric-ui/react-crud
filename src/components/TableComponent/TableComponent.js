@@ -7,7 +7,7 @@ class TableComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      order: "",
+      order: "asc",
     }
   }
 
@@ -25,14 +25,17 @@ class TableComponent extends Component {
 
     if (order === "") {
       this.setState({order: "asc"});
-      e.currentTarget.firstElementChild.className = "btn btn-sort sorted-up";
+      e.currentTarget.firstElementChild.className = "btn btn-sort";
     } else if (order === "asc") {
       this.setState({order: "desc"});
-      e.currentTarget.firstElementChild.className = "btn btn-sort sorted-down";
+      e.currentTarget.firstElementChild.className = "btn btn-sort sorted-up";
     } else if (order === "desc") {
       this.setState({order: ""});
-      e.currentTarget.firstElementChild.className = "btn btn-sort";
+      e.currentTarget.firstElementChild.className = "btn btn-sort sorted-down";
+    }
 
+    if(order === "") {
+      orderBy = ""
     }
 
     sortEmployee(order, orderBy);

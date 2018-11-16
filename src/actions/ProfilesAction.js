@@ -16,22 +16,22 @@ export const getProfiles = () => {
     dispatch({
       type: PROFILES_REQUEST
     });
-      axios.get(url)
-          .then((response) => new Promise (() => {
-            setTimeout(() => {
-              dispatch({
-                type: PROFILES_REQUEST_SUCCESS,
-                payload: response.data,
-              });
-            }, 1500)
-          }))
-          .catch(() => {
+    axios.get(url)
+        .then((response) => new Promise(() => {
+          setTimeout(() => {
             dispatch({
-              type: PROFILES_REQUEST_FAIL,
-              error: true,
-              payload: new Error('failed'),
+              type: PROFILES_REQUEST_SUCCESS,
+              payload: response.data,
             })
-          });
+          }, 1500)
+        }))
+        .catch(() => {
+          dispatch({
+            type: PROFILES_REQUEST_FAIL,
+            error: true,
+            payload: new Error('failed'),
+          })
+        });
   }
 };
 
@@ -51,20 +51,18 @@ export const searchEmployee = (searchKey) => {
 };
 
 export const sortEmployee = (order, orderBy) => {
-    return dispatch => {
-      axios.get(url)
-          .then((response) => {
-            dispatch ({
-              type: PROFILES_SORT,
-              order: order,
-              orderBy: orderBy,
-              payload: response.data
-            })
-          })
-          .catch(() => {
-            return new Error('failed')
+  return dispatch => {
+    axios.get(`${url}?_sort=${orderBy}&_order=${order}`)
+        .then((response) => {
+          dispatch({
+            type: PROFILES_SORT,
+            payload: response.data,
           });
-    }
+        })
+        .catch(() => {
+          return new Error('failed')
+        });
+  }
 };
 
 export const addEmployee = newEmployee => {
