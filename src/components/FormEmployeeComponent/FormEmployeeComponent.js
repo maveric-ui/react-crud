@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './FormEmployeeComponent.less';
-import { Button, Icon, MenuItem, Input, Select, FormControl } from '@material-ui/core';
+import { Button, Icon, MenuItem, Input, Select, FormControl, FormHelperText } from '@material-ui/core';
 
 let employeeLength;
 class FormEmployeeComponent extends Component {
@@ -14,7 +14,8 @@ class FormEmployeeComponent extends Component {
       hireDate: !employeeLength ? "" : props.employee.hireDate,
       address: !employeeLength ? "" : props.employee.address,
       city: !employeeLength ? "" : props.employee.city,
-      country: !employeeLength ? "" : props.employee.country
+      country: !employeeLength ? "" : props.employee.country,
+
     };
   }
 
@@ -39,14 +40,16 @@ class FormEmployeeComponent extends Component {
   renderControls = () => {
     if (!employeeLength) {
       return (
-          <Button type="submit" variant="outlined" className="btn btn-save" onClick={this.onSave}>
+          <Button type="submit" variant="outlined" className="btn btn-save"
+                  onClick={this.onSave}>
             <Icon className="i-check">check</Icon>
             Save
           </Button>
       )
     } else {
       return (
-          <Button type="submit" variant="outlined" className="btn btn-update" onClick={this.onUpdate}>
+          <Button type="submit" variant="outlined" className="btn btn-update"
+                  onClick={this.onUpdate}>
             <Icon className="i-update">edit_icon</Icon>
             Update
           </Button>
@@ -55,27 +58,44 @@ class FormEmployeeComponent extends Component {
   };
 
   handleValueChange = name => event => {
-    this.setState({[name]: event.target.value});
+    const value = event.target.value;
+
+
+
+
+    this.setState({[name]: value});
   };
 
   onSave = (e) => {
     e.preventDefault();
     const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
     const newEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
-
+    // this.validationForm();
     this.props.handleSave(newEmployee);
   };
 
   onUpdate = (e) => {
     e.preventDefault();
     const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
-    const updatedEmployee = {name, position, dateOfBirth, hireDate, address, city, country,};
+    const updatedEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
+    // this.validationForm();
     this.props.handleUpdate(updatedEmployee);
   };
 
   onClose = () => {
     this.props.handleClose();
   };
+
+  // validationForm = () => {
+  //   let valid = true;
+  //
+  //   if() {
+  //     valid = false
+  //   }
+  //
+  //   return valid;
+  // };
+
 
   render() {
     const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
