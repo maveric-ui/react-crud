@@ -16,6 +16,11 @@ class FormEmployeeComponent extends Component {
       city: !employeeLength ? "" : props.employee.city,
       country: !employeeLength ? "" : props.employee.country,
 
+      errorState: {
+        required: false,
+        length: false,
+      }
+
     };
   }
 
@@ -59,26 +64,38 @@ class FormEmployeeComponent extends Component {
 
   handleValueChange = name => event => {
     const value = event.target.value;
+    const { errorState } = this.state;
 
+    switch (name) {
+      case "name":
+        errorState.require = value === "";
+        errorState.length = value.length < 3;
+        break;
 
+      default:
+        break;
+    }
 
-
-    this.setState({[name]: value});
+    this.setState({errorState, [name]: value});
   };
 
   onSave = (e) => {
     e.preventDefault();
     const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
     const newEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
-    // this.validationForm();
-    this.props.handleSave(newEmployee);
+    console.log(newEmployee)
+    // if(this.validationForm) {
+    //   this.props.handleSave(newEmployee);
+    // } else {
+    //   console.error("Faild");
+    // }
+
   };
 
   onUpdate = (e) => {
     e.preventDefault();
     const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
     const updatedEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
-    // this.validationForm();
     this.props.handleUpdate(updatedEmployee);
   };
 
@@ -86,19 +103,20 @@ class FormEmployeeComponent extends Component {
     this.props.handleClose();
   };
 
-  // validationForm = () => {
-  //   let valid = true;
-  //
-  //   if() {
-  //     valid = false
-  //   }
-  //
-  //   return valid;
-  // };
+  validationForm = () => {
+    const { errorState } = this.state;
+    let valid = true;
+
+    Object.values(errorState).map(val => {
+      val === true && (valid = false);
+    });
+
+    return valid;
+  };
 
 
   render() {
-    const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
+    const {name, position, dateOfBirth, hireDate, address, city, country, errorState} = this.state;
 
     return (
         <form id="form-employee" className="form-container" noValidate autoComplete="off">
@@ -111,6 +129,9 @@ class FormEmployeeComponent extends Component {
                 value={name}
                 onChange={this.handleValueChange('name')}
             />
+            {errorState.required ? <FormHelperText error>This field is required</FormHelperText> : false}
+            {errorState.length ? <FormHelperText error>This field must have more letters</FormHelperText> : false}
+
           </FormControl>
           <Input
               placeholder="Position"
