@@ -33,7 +33,7 @@
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="html" value="3" />
-          <entry key="js" value="187" />
+          <entry key="js" value="189" />
           <entry key="json" value="22" />
           <entry key="less" value="84" />
           <entry key="profileChahe" value="1" />
@@ -45,7 +45,7 @@
         <counts>
           <entry key="HTML" value="3" />
           <entry key="JSON" value="22" />
-          <entry key="JavaScript" value="187" />
+          <entry key="JavaScript" value="189" />
           <entry key="Less" value="84" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SVG" value="16" />
@@ -56,19 +56,19 @@
         <counts>
           <entry key="gitignore" value="7" />
           <entry key="html" value="9" />
-          <entry key="js" value="31356" />
+          <entry key="js" value="35229" />
           <entry key="json" value="135" />
           <entry key="less" value="4677" />
-          <entry key="txt" value="408" />
+          <entry key="txt" value="428" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="9" />
           <entry key="JSON" value="135" />
-          <entry key="JavaScript" value="31356" />
+          <entry key="JavaScript" value="35229" />
           <entry key="Less" value="4677" />
-          <entry key="PLAIN_TEXT" value="415" />
+          <entry key="PLAIN_TEXT" value="435" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -96,13 +96,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+            <state relative-caret-position="340">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -122,6 +127,7 @@
       <find>SelectInput</find>
       <find>sortedProfiles</find>
       <find>profiles</find>
+      <find>handleValueChange</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/actions/TableData.js" />
         <option value="$PROJECT_DIR$/src/actions/ProfileData.js" />
         <option value="$PROJECT_DIR$/src/reducers/profiles.js" />
         <option value="$PROJECT_DIR$/src/utils/App.js" />
@@ -180,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/actions/ProfilesAction.js" />
         <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" />
         <option value="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js" />
+        <option value="$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js" />
         <option value="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js" />
       </list>
     </option>
@@ -257,7 +263,20 @@
               <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-crud" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="TableComponent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -342,7 +361,7 @@
       <workItem from="1541600663911" duration="39478000" />
       <workItem from="1542009815477" duration="29669000" />
       <workItem from="1542182767558" duration="52450000" />
-      <workItem from="1542614844944" duration="13245000" />
+      <workItem from="1542614844944" duration="35792000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1539182423048</created>
@@ -491,11 +510,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542641143003</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="TODO: validation form">
+      <created>1542788080613</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1542788080613</updated>
+    </task>
+    <task id="LOCAL-00023" summary="validate stable">
+      <created>1542816975282</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1542816975282</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288923000" />
+    <option name="totallyTimeSpent" value="311470000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -556,10 +589,11 @@
     <MESSAGE value="updated sorting" />
     <MESSAGE value="stable sorting, tooltip, get request" />
     <MESSAGE value="TODO: validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: validation" />
+    <MESSAGE value="TODO: validation form" />
+    <MESSAGE value="validate stable" />
+    <option name="LAST_COMMIT_MESSAGE" value="validate stable" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Main/Main.js" />
     <entry file="file://$PROJECT_DIR$/src/components/Main/Main.less" />
     <entry file="file://$PROJECT_DIR$/src/components/Email/Email.less">
       <provider selected="true" editor-type-id="text-editor" />
@@ -811,23 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="67" lean-forward="true" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -842,10 +859,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="78" selection-start-line="78" selection-end-line="82" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="85" column="27" selection-start-line="85" selection-start-column="27" selection-end-line="85" selection-end-column="27" />
+        <state relative-caret-position="340">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

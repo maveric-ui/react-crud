@@ -9,22 +9,32 @@ class FormEmployeeComponent extends Component {
     super(props);
     employeeLength = Object.keys(props.employee).length;
     this.state = {
+      formData: {
+        name: !employeeLength ? "" : props.employee.name,
+        // name: {value: value, isValid:true},
+        position: !employeeLength ? "" : props.employee.position,
+        dateOfBirth: !employeeLength ? "" : props.employee.dateOfBirth,
+        hireDate: !employeeLength ? "" : props.employee.hireDate,
+        address: !employeeLength ? "" : props.employee.address,
+        city: !employeeLength ? "" : props.employee.city,
+        country: !employeeLength ? "" : props.employee.country,
+      },
       name: !employeeLength ? "" : props.employee.name,
+      // name: {value: value, isValid:true},
       position: !employeeLength ? "" : props.employee.position,
       dateOfBirth: !employeeLength ? "" : props.employee.dateOfBirth,
       hireDate: !employeeLength ? "" : props.employee.hireDate,
       address: !employeeLength ? "" : props.employee.address,
       city: !employeeLength ? "" : props.employee.city,
       country: !employeeLength ? "" : props.employee.country,
-
-      errorStates: {
-        name: null,
-        dateOfBirth: null,
-        hireDate: null,
-        country: null,
-      },
     };
   }
+
+  // isValid = (formData) => {
+  //   switch (formData) {
+  //     case
+  //   }
+  // }
 
   renderMenuItemCity = () => {
     const cities = ['London', 'New York', 'Kiev'];
@@ -65,123 +75,46 @@ class FormEmployeeComponent extends Component {
   };
 
   handleValueChange = name => event => {
-    const value = event.target.value;
-    const {errorStates, dateOfBirth} = this.state;
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth() + 1;
-    const currentDay = currentDate.getDate();
-
-    switch (name) {
-      case "name":
-        if (value.length === 0) {
-          errorStates.name = 'This field is required';
-        } else if (value.length <= 2) {
-          errorStates.name = 'This field must have more then 2 letters'
-        } else {
-          errorStates.name = null;
-        }
-        break;
-      case "dateOfBirth":
-        const getDateOfBirth = new Date(value);
-        const dateOfBirthYear = getDateOfBirth.getFullYear();
-        const dateOfBirthMonth = getDateOfBirth.getMonth() + 1;
-        const dateOfBirthDay = getDateOfBirth.getDate();
-
-        if (value.length === 0) {
-          errorStates.dateOfBirth = 'This field is required';
-        } else if (dateOfBirthYear === currentYear
-            && dateOfBirthMonth === currentMonth
-            && dateOfBirthDay === currentDay) {
-          errorStates.dateOfBirth = 'The Date of Birth can\'t be today';
-        } else if (dateOfBirthYear > currentYear
-            || dateOfBirthMonth > currentMonth
-            || dateOfBirthDay > currentDay) {
-          errorStates.dateOfBirth = 'The Date of Birth can\'t be more than current date';
-        } else {
-          errorStates.dateOfBirth = null;
-        }
-        break;
-      case "hireDate":
-        const getHireDate = new Date(value);
-        const hireDateYear = getHireDate.getFullYear();
-        const hireDateMonth = getHireDate.getMonth() + 1;
-        const hireDateDay = getHireDate.getDate();
-
-        const dateOfBirthState = new Date(dateOfBirth);
-        const dateOfBirthStateYear = dateOfBirthState.getFullYear();
-        const dateOfBirthStateMonth = dateOfBirthState.getMonth() + 1;
-        const dateOfBirthStateDay = dateOfBirthState.getDate();
-
-        if (value.length === 0) {
-          errorStates.hireDate = 'This field is required';
-        } else if (hireDateYear === dateOfBirthStateYear
-            && hireDateMonth === dateOfBirthStateMonth
-            && hireDateDay === dateOfBirthStateDay) {
-          errorStates.hireDate = 'The Hire Date  can\'t be equal to Date of Birth';
-        } else if (hireDateYear < dateOfBirthStateYear
-            || hireDateMonth < dateOfBirthStateMonth
-            || hireDateDay < dateOfBirthStateDay) {
-          errorStates.hireDate = 'The Hire Date  can\'t be less than Date of Birth';
-        } else if (hireDateYear > currentYear
-            || hireDateMonth > currentMonth
-            || hireDateDay > currentDay) {
-          errorStates.hireDate = 'The Hire Date  can\'t be more than current date';
-        } else {
-          errorStates.hireDate = null;
-        }
-        break;
-      case "country":
-        if (value.length === 0) {
-          errorStates.country = 'This field is required';
-        } else {
-          errorStates.country = null;
-        }
-        break;
-      default:
-        break;
-    }
-
-    this.setState({errorStates, [name]: value});
+    this.setState({[name]: event.target.value});
   };
 
-  validationForm = () => {
-    const {errorStates, name, dateOfBirth, hireDate, country} = this.state;
-    let valid = {};
-
-    Object.values(errorStates).map(val => val !== null && (valid = false));
-
-    if (name === "" || dateOfBirth === "" || hireDate === "" || country === "") {
-      valid = false;
-    }
-
-    return valid;
-  };
+  // validationForm = () => {
+  //   const {errorStates, name, dateOfBirth, hireDate, country} = this.state;
+  //   let valid = {};
+  //
+  //   Object.values(errorStates).map(val => val !== null && (valid = false));
+  //
+  //   if (name === "" || dateOfBirth === "" || hireDate === "" || country === "") {
+  //     valid = false;
+  //   }
+  //
+  //   return valid;
+  // };
 
   onSave = (e) => {
     e.preventDefault();
     const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
     const newEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
-
-    if (this.validationForm()) {
-      // this.props.handleSave(newEmployee);
-      console.log(newEmployee)
-    } else {
-      console.error("Faild");
-    }
+    console.log(newEmployee)
+    // if (this.validationForm()) {
+    //   // this.props.handleSave(newEmployee);
+    //   // console.log(newEmployee)
+    // } else {
+    //   console.error("Faild");
+    // }
   };
 
   onUpdate = (e) => {
     e.preventDefault();
     const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
     const updatedEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
-
-    if (this.validationForm()) {
-      // this.props.handleUpdate(updatedEmployee);
-      console.log(updatedEmployee);
-    } else {
-      console.error("Faild");
-    }
+    console.log(updatedEmployee);
+    // if (this.validationForm()) {
+    //   // this.props.handleUpdate(updatedEmployee);
+    //   console.log(updatedEmployee);
+    // } else {
+    //   console.error("Faild");
+    // }
   };
 
   onClose = () => {
@@ -193,7 +126,7 @@ class FormEmployeeComponent extends Component {
 
     return (
         <form id="form-employee" className="form-container" noValidate autoComplete="off">
-          <FormControl error={errorStates.name !== null}>
+          <FormControl>
             <Input
                 required
                 placeholder="Name"
@@ -202,7 +135,6 @@ class FormEmployeeComponent extends Component {
                 value={name}
                 onChange={this.handleValueChange('name')}
             />
-            {errorStates.name === null ? "" : <FormHelperText error>{errorStates.name}</FormHelperText>}
           </FormControl>
           <Input
               placeholder="Position"
@@ -210,7 +142,7 @@ class FormEmployeeComponent extends Component {
               value={position}
               onChange={this.handleValueChange('position')}
           />
-          <FormControl error={errorStates.dateOfBirth !== null}>
+          <FormControl>
             <Input
                 required
                 type="date"
@@ -218,9 +150,8 @@ class FormEmployeeComponent extends Component {
                 value={dateOfBirth}
                 onChange={this.handleValueChange('dateOfBirth')}
             />
-            {errorStates.dateOfBirth === null ? "" : <FormHelperText error>{errorStates.dateOfBirth}</FormHelperText>}
           </FormControl>
-          <FormControl error={errorStates.hireDate !== null}>
+          <FormControl>
             <Input
                 required
                 type="date"
@@ -228,7 +159,6 @@ class FormEmployeeComponent extends Component {
                 value={hireDate}
                 onChange={this.handleValueChange('hireDate')}
             />
-            {errorStates.hireDate === null ? "" : <FormHelperText error>{errorStates.hireDate}</FormHelperText>}
           </FormControl>
           <Input
               type="input"
@@ -260,7 +190,7 @@ class FormEmployeeComponent extends Component {
           </FormControl>
 
 
-          <FormControl error={errorStates.country !== null}>
+          <FormControl>
             <Select
                 required
                 displayEmpty
@@ -281,7 +211,6 @@ class FormEmployeeComponent extends Component {
               </MenuItem>
               {this.renderMenuItemCountry()}
             </Select>
-            {errorStates.country === null ? "" : <FormHelperText error>{errorStates.country}</FormHelperText>}
           </FormControl>
 
           <div className="form__controls">
