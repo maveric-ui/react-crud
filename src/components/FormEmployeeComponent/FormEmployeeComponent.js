@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './FormEmployeeComponent.less';
-import { Button, Icon, MenuItem, Input, Select, FormControl, FormHelperText } from '@material-ui/core';
+import { Button, Icon, MenuItem, Input, Select, FormControl } from '@material-ui/core';
 
 let employeeLength;
 
@@ -10,23 +10,14 @@ class FormEmployeeComponent extends Component {
     employeeLength = Object.keys(props.employee).length;
     this.state = {
       formData: {
-        name: !employeeLength ? "" : props.employee.name,
-        // name: {value: value, isValid:true},
-        position: !employeeLength ? "" : props.employee.position,
-        dateOfBirth: !employeeLength ? "" : props.employee.dateOfBirth,
-        hireDate: !employeeLength ? "" : props.employee.hireDate,
-        address: !employeeLength ? "" : props.employee.address,
-        city: !employeeLength ? "" : props.employee.city,
-        country: !employeeLength ? "" : props.employee.country,
-      },
-      name: !employeeLength ? "" : props.employee.name,
-      // name: {value: value, isValid:true},
-      position: !employeeLength ? "" : props.employee.position,
-      dateOfBirth: !employeeLength ? "" : props.employee.dateOfBirth,
-      hireDate: !employeeLength ? "" : props.employee.hireDate,
-      address: !employeeLength ? "" : props.employee.address,
-      city: !employeeLength ? "" : props.employee.city,
-      country: !employeeLength ? "" : props.employee.country,
+        name: {value: !employeeLength ? "" : props.employee.name, isValid: true},
+        position: {value: !employeeLength ? "" : props.employee.position, isValid: true},
+        dateOfBirth: {value: !employeeLength ? "" : props.employee.dateOfBirth, isValid: true},
+        hireDate: {value: !employeeLength ? "" : props.employee.hireDate, isValid: true},
+        address: {value: !employeeLength ? "" : props.employee.address, isValid: true},
+        city: {value: !employeeLength ? "" : props.employee.city, isValid: true},
+        country: {value: !employeeLength ? "" : props.employee.country, isValid: true},
+      }
     };
   }
 
@@ -75,7 +66,8 @@ class FormEmployeeComponent extends Component {
   };
 
   handleValueChange = name => event => {
-    this.setState({[name]: event.target.value});
+    const value = event.target.value;
+    this.setState({formData: {...this.state.formData, [name]: {value: value}} });
   };
 
   // validationForm = () => {
@@ -93,8 +85,8 @@ class FormEmployeeComponent extends Component {
 
   onSave = (e) => {
     e.preventDefault();
-    const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
-    const newEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
+    const {formData} = this.state;
+    const newEmployee = {...formData};
     console.log(newEmployee)
     // if (this.validationForm()) {
     //   // this.props.handleSave(newEmployee);
@@ -106,8 +98,8 @@ class FormEmployeeComponent extends Component {
 
   onUpdate = (e) => {
     e.preventDefault();
-    const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
-    const updatedEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
+    const {formData} = this.state;
+    const updatedEmployee = {...formData};
     console.log(updatedEmployee);
     // if (this.validationForm()) {
     //   // this.props.handleUpdate(updatedEmployee);
@@ -122,8 +114,7 @@ class FormEmployeeComponent extends Component {
   };
 
   render() {
-    const {name, position, dateOfBirth, hireDate, address, city, country, errorStates} = this.state;
-
+    const {formData} = this.state;
     return (
         <form id="form-employee" className="form-container" noValidate autoComplete="off">
           <FormControl>
@@ -132,14 +123,14 @@ class FormEmployeeComponent extends Component {
                 placeholder="Name"
                 type="input"
                 className="form__field"
-                value={name}
+                value={formData.name.value}
                 onChange={this.handleValueChange('name')}
             />
           </FormControl>
           <Input
               placeholder="Position"
               className="form__field"
-              value={position}
+              value={formData.position.value}
               onChange={this.handleValueChange('position')}
           />
           <FormControl>
@@ -147,7 +138,7 @@ class FormEmployeeComponent extends Component {
                 required
                 type="date"
                 className="form__field"
-                value={dateOfBirth}
+                value={formData.dateOfBirth.value}
                 onChange={this.handleValueChange('dateOfBirth')}
             />
           </FormControl>
@@ -156,7 +147,7 @@ class FormEmployeeComponent extends Component {
                 required
                 type="date"
                 className="form__field"
-                value={hireDate}
+                value={formData.hireDate.value}
                 onChange={this.handleValueChange('hireDate')}
             />
           </FormControl>
@@ -164,7 +155,7 @@ class FormEmployeeComponent extends Component {
               type="input"
               placeholder="Address"
               className="form__field"
-              value={address}
+              value={formData.address.value}
               onChange={this.handleValueChange('address')}
           />
           <FormControl>
@@ -172,13 +163,13 @@ class FormEmployeeComponent extends Component {
                 name="city"
                 displayEmpty
                 className="form__field"
-                value={city}
+                value={formData.city.value}
                 onChange={this.handleValueChange('city')}
                 renderValue={value => {
                   if (!value) {
                     return "City";
                   }
-                  return city
+                  return formData.city.value
                 }
                 }
             >
@@ -196,13 +187,13 @@ class FormEmployeeComponent extends Component {
                 displayEmpty
                 name="country"
                 className="form__field"
-                value={country}
+                value={formData.country.value}
                 onChange={this.handleValueChange('country')}
                 renderValue={value => {
                   if (!value) {
                     return "Country";
                   }
-                  return country
+                  return formData.country.value
                 }
                 }
             >
