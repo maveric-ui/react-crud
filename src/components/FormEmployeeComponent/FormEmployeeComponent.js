@@ -78,21 +78,25 @@ class FormEmployeeComponent extends Component {
 
     Object.values(errorStates).map(val => val !== null && (valid = false));
 
-    if (name === "" || dateOfBirth === "" || hireDate === "" || country === "") {
-      this.setState({errorStates: {
-          name: "This field is required",
-          dateOfBirth: "This field is required",
-          hireDate: "This field is required",
-          country: "This field is required",
-        }
-      });
+    if( name === "") {
+      this.setState({errorStates: {name: "This field is required"}});
       valid = false;
     }
 
-    // if(name === "") {
-    //   this.setState({errorStates: {name: "This field is required"}});
-    //   valid = false;
-    // }
+    if( dateOfBirth === "") {
+      this.setState({errorStates: {dateOfBirth: "This field is required"}});
+      valid = false;
+    }
+
+    if( hireDate === "") {
+      this.setState({errorStates: {hireDate: "This field is required"}});
+      valid = false;
+    }
+
+    if( country === "") {
+      this.setState({errorStates: {country: "This field is required"}});
+      valid = false;
+    }
 
     return valid;
   };
