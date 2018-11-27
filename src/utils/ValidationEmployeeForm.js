@@ -1,4 +1,4 @@
-export const validationEmployeeForm = (name, value, errorStates, dateOfBirth) => {
+export const validateFormOnChanges = (name, value, errorStates, dateOfBirth) => {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth() + 1;
@@ -73,4 +73,21 @@ export const validationEmployeeForm = (name, value, errorStates, dateOfBirth) =>
     default:
       break;
   }
+};
+
+
+export const validateFieldOnSubmit = (errorStates, formData) => {
+    if(formData.name === "") {
+      errorStates.name = "This field is required";
+    }
+    if(formData.dateOfBirth === "") {
+      errorStates.dateOfBirth = "This field is required";
+    }
+    if(formData.hireDate === "") {
+      errorStates.hireDate = "This field is required";
+    }
+    if(formData.country === "") {
+      errorStates.country = "This field is required";
+    }
+
 };

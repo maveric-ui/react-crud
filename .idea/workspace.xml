@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edf6b073-e3e3-43ae-8253-e0fd8029840d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profiles.json" beforeDir="false" afterPath="$PROJECT_DIR$/profiles.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,22 +22,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="88" column="20" lean-forward="true" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+            <state relative-caret-position="294">
+              <caret line="66" column="58" lean-forward="true" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -42,10 +34,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js">
+        <entry file="file://$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+            <state relative-caret-position="297">
+              <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="136">
+                <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -75,7 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/actions/ProfileData.js" />
         <option value="$PROJECT_DIR$/src/reducers/profiles.js" />
         <option value="$PROJECT_DIR$/src/utils/App.js" />
         <option value="$PROJECT_DIR$/src/reducers/rootReducer.js" />
@@ -110,22 +113,23 @@
         <option value="$PROJECT_DIR$/src/containers/PageEmployeesContainer/PageEmployeesContainer.js" />
         <option value="$PROJECT_DIR$/src/containers/PageEmployeesContainer/PageEmployeesContainer.less" />
         <option value="$PROJECT_DIR$/src/containers/PageEmployeesContainer/EmployeesContainer.js" />
-        <option value="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.less" />
         <option value="$PROJECT_DIR$/src/components/SidebarComponent/SidebarComponent.js" />
         <option value="$PROJECT_DIR$/src/components/SidebarComponent/SidebarComponent.less" />
         <option value="$PROJECT_DIR$/src/assets/img/arrow-up.svg" />
         <option value="$PROJECT_DIR$/src/assets/img/arrow-down.svg" />
-        <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.less" />
         <option value="$PROJECT_DIR$/src/index.less" />
         <option value="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.less" />
         <option value="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.less" />
         <option value="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js" />
         <option value="$PROJECT_DIR$/src/reducers/ProfilesReducer.js" />
         <option value="$PROJECT_DIR$/src/actions/ProfilesAction.js" />
-        <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js" />
         <option value="$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js" />
+        <option value="$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js" />
         <option value="$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.less" />
+        <option value="$PROJECT_DIR$/src/components/TableComponent/TableComponent.js" />
+        <option value="$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.less" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -154,51 +158,6 @@
               <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-crud" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FormEmployeeComponent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ModalEmployee" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TableComponent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="react-crud" type="b2602c69:ProjectViewProjectNode" />
-              <item name="react-crud" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -436,11 +395,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542641143003</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="stable validation">
+      <created>1543238049680</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543238049680</updated>
+    </task>
+    <task id="LOCAL-00023" summary="stable validation">
+      <created>1543239158569</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1543239158569</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293221000" />
+    <option name="totallyTimeSpent" value="307664000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -461,7 +434,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32968238" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31344903" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31310943" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -470,7 +443,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25785482" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.25785482" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -524,13 +497,10 @@
     <MESSAGE value="updated sorting" />
     <MESSAGE value="stable sorting, tooltip, get request" />
     <MESSAGE value="TODO: validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO: validation" />
+    <MESSAGE value="stable validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="stable validation" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Main/Main.less" />
-    <entry file="file://$PROJECT_DIR$/src/components/Email/Email.less">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Email/Email.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -623,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/img/arrow-up.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -675,13 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -754,44 +710,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="86" column="74" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/ProfilesAction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="67" lean-forward="true" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="130" column="50" lean-forward="true" selection-start-line="130" selection-start-column="50" selection-end-line="130" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -809,20 +731,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="296" column="25" lean-forward="true" selection-start-line="296" selection-start-column="25" selection-end-line="296" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ModalEmployee/ModalEmployee.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/ValidationEmployeeForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="75" column="2" lean-forward="true" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Tooltip/Tooltip.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="46" column="14" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TableComponent/TableComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="90" column="89" lean-forward="true" selection-start-line="90" selection-start-column="89" selection-end-line="90" selection-end-column="89" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FormEmployeeComponent/FormEmployeeComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="88" column="20" lean-forward="true" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+        <state relative-caret-position="34">
+          <caret line="2" column="75" selection-start-line="2" selection-start-column="75" selection-end-line="2" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="66" column="58" lean-forward="true" selection-start-line="66" selection-start-column="58" selection-end-line="66" selection-end-column="58" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/EmployeesContainer/EmployeesContainer.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

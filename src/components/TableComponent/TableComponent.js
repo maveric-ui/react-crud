@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './TableComponent.less';
 import { Table, TableBody, TableCell, TableHead, TableRow, Button, Icon, Tooltip } from '@material-ui/core';
 
-
 class TableComponent extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,7 @@ class TableComponent extends Component {
       e.currentTarget.firstElementChild.className = "btn btn-sort sorted-down";
     }
 
-    if(order === "") {
+    if (order === "") {
       orderBy = ""
     }
 
@@ -57,16 +56,14 @@ class TableComponent extends Component {
         <TableRow className="table__head__row">
           {rowHead.map((row) => {
             return (
-
                 <TableCell key={row.id} id={row.id} className="table__head__cell">
                   <Tooltip title="Sort" placement="bottom-start">
                     <span className="table__head__cell-sort" onClick={(e) => this.onSort(e, row.id)}>
                         {row.label}
-                        <button className="btn btn-sort"/>
+                      <button className="btn btn-sort"/>
                     </span>
                   </Tooltip>
                 </TableCell>
-
             )
           })}
         </TableRow>
@@ -90,7 +87,11 @@ class TableComponent extends Component {
             <TableCell className="table__body__cell">{profile.position}</TableCell>
             <TableCell className="table__body__cell">{dateOfBirth}</TableCell>
             <TableCell className="table__body__cell">{hireDate}</TableCell>
-            <TableCell className="table__body__cell cell-address">{profile.address}</TableCell>
+            <TableCell className="table__body__cell cell-address">
+              <Tooltip title={profile.address} enterDelay={500} placement="bottom-start">
+                <span>{profile.address}</span>
+              </Tooltip>
+            </TableCell>
             <TableCell className="table__body__cell">{profile.city}</TableCell>
             <TableCell className="table__body__cell">{profile.country}</TableCell>
             <TableCell className="table__body__cell cell-control">

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './FormEmployeeComponent.less';
 import { Button, Icon, MenuItem, Input, Select, FormControl, FormHelperText } from '@material-ui/core';
-import { validationEmployeeForm } from '../../utils/ValidationEmployeeForm';
+import { validateFormOnChanges, validateFieldOnSubmit } from '../../utils/ValidationEmployeeForm';
 
 let employeeLength;
 
@@ -10,13 +10,15 @@ class FormEmployeeComponent extends Component {
     super(props);
     employeeLength = Object.keys(props.employee).length;
     this.state = {
-      name: !employeeLength ? "" : props.employee.name,
-      position: !employeeLength ? "" : props.employee.position,
-      dateOfBirth: !employeeLength ? "" : props.employee.dateOfBirth,
-      hireDate: !employeeLength ? "" : props.employee.hireDate,
-      address: !employeeLength ? "" : props.employee.address,
-      city: !employeeLength ? "" : props.employee.city,
-      country: !employeeLength ? "" : props.employee.country,
+      formData: {
+        name: !employeeLength ? "" : props.employee.name,
+        position: !employeeLength ? "" : props.employee.position,
+        dateOfBirth: !employeeLength ? "" : props.employee.dateOfBirth,
+        hireDate: !employeeLength ? "" : props.employee.hireDate,
+        address: !employeeLength ? "" : props.employee.address,
+        city: !employeeLength ? "" : props.employee.city,
+        country: !employeeLength ? "" : props.employee.country,
+      },
 
       errorStates: {
         name: null,
@@ -65,66 +67,46 @@ class FormEmployeeComponent extends Component {
     }
   };
 
-  handleValueChange = name => event => {
+  handleValueChanges = name => event => {
     const value = event.target.value;
-    const {errorStates, dateOfBirth} = this.state;
-    validationEmployeeForm(name, value, errorStates, dateOfBirth);
-    this.setState({errorStates, [name]: value});
+    const {errorStates, formData} = this.state;
+    validateFormOnChanges(name, value, errorStates, formData.dateOfBirth);
+    this.setState({errorStates, formData: {...this.state.formData, [name]: value}});
   };
 
   validationForm = () => {
-    const {errorStates, name, dateOfBirth, hireDate, country} = this.state;
-    let valid = {};
+    const {errorStates, formData} = this.state;
+    let valid = true;
 
+    validateFieldOnSubmit(errorStates, formData);
+    this.setState({errorStates});
     Object.values(errorStates).map(val => val !== null && (valid = false));
-
-    if( name === "") {
-      this.setState({errorStates: {name: "This field is required"}});
-      valid = false;
-    }
-
-    if( dateOfBirth === "") {
-      this.setState({errorStates: {dateOfBirth: "This field is required"}});
-      valid = false;
-    }
-
-    if( hireDate === "") {
-      this.setState({errorStates: {hireDate: "This field is required"}});
-      valid = false;
-    }
-
-    if( country === "") {
-      this.setState({errorStates: {country: "This field is required"}});
-      valid = false;
-    }
 
     return valid;
   };
 
   onSave = (e) => {
     e.preventDefault();
-    const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
-    const newEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
+    const {formData} = this.state;
+    const newEmployee = {...formData};
 
-    if (this.validationForm()) {
-      // this.props.handleSave(newEmployee);
-      console.log(newEmployee)
-    } else {
-      console.error("Faild");
+    if (!this.validationForm()) {
+     return;
     }
+
+    this.props.handleSave(newEmployee);
   };
 
   onUpdate = (e) => {
     e.preventDefault();
-    const {name, position, dateOfBirth, hireDate, address, city, country} = this.state;
-    const updatedEmployee = {name, position, dateOfBirth, hireDate, address, city, country};
+    const {formData} = this.state;
+    const updatedEmployee = {...formData};
 
-    if (this.validationForm()) {
-      // this.props.handleUpdate(updatedEmployee);
-      console.log(updatedEmployee);
-    } else {
-      console.error("Faild");
+    if (!this.validationForm()) {
+      return;
     }
+
+    this.props.handleUpdate(updatedEmployee);
   };
 
   onClose = () => {
@@ -132,44 +114,44 @@ class FormEmployeeComponent extends Component {
   };
 
   render() {
-    const {name, position, dateOfBirth, hireDate, address, city, country, errorStates} = this.state;
+    const {formData, errorStates} = this.state;
 
     return (
         <form id="form-employee" className="form-container" noValidate autoComplete="off">
-          <FormControl error={errorStates.name !== null}>
+          <FormControl error={errorStates.name != null}>
             <Input
                 required
                 placeholder="Name"
                 type="input"
                 className="form__field"
-                value={name}
-                onChange={this.handleValueChange('name')}
+                value={formData.name}
+                onChange={this.handleValueChanges('name')}
             />
             {errorStates.name === null ? "" : <FormHelperText error>{errorStates.name}</FormHelperText>}
           </FormControl>
           <Input
               placeholder="Position"
               className="form__field"
-              value={position}
-              onChange={this.handleValueChange('position')}
+              value={formData.position}
+              onChange={this.handleValueChanges('position')}
           />
-          <FormControl error={errorStates.dateOfBirth !== null}>
+          <FormControl error={errorStates.dateOfBirth != null}>
             <Input
                 required
                 type="date"
                 className="form__field"
-                value={dateOfBirth}
-                onChange={this.handleValueChange('dateOfBirth')}
+                value={formData.dateOfBirth}
+                onChange={this.handleValueChanges('dateOfBirth')}
             />
             {errorStates.dateOfBirth === null ? "" : <FormHelperText error>{errorStates.dateOfBirth}</FormHelperText>}
           </FormControl>
-          <FormControl error={errorStates.hireDate !== null}>
+          <FormControl error={errorStates.hireDate != null}>
             <Input
                 required
                 type="date"
                 className="form__field"
-                value={hireDate}
-                onChange={this.handleValueChange('hireDate')}
+                value={formData.hireDate}
+                onChange={this.handleValueChanges('hireDate')}
             />
             {errorStates.hireDate === null ? "" : <FormHelperText error>{errorStates.hireDate}</FormHelperText>}
           </FormControl>
@@ -177,21 +159,21 @@ class FormEmployeeComponent extends Component {
               type="input"
               placeholder="Address"
               className="form__field"
-              value={address}
-              onChange={this.handleValueChange('address')}
+              value={formData.address}
+              onChange={this.handleValueChanges('address')}
           />
           <FormControl>
             <Select
                 name="city"
                 displayEmpty
                 className="form__field"
-                value={city}
-                onChange={this.handleValueChange('city')}
+                value={formData.city}
+                onChange={this.handleValueChanges('city')}
                 renderValue={value => {
                   if (!value) {
                     return "City";
                   }
-                  return city
+                  return formData.city
                 }
                 }
             >
@@ -203,19 +185,19 @@ class FormEmployeeComponent extends Component {
           </FormControl>
 
 
-          <FormControl error={errorStates.country !== null}>
+          <FormControl error={errorStates.country != null}>
             <Select
                 required
                 displayEmpty
                 name="country"
                 className="form__field"
-                value={country}
-                onChange={this.handleValueChange('country')}
+                value={formData.country}
+                onChange={this.handleValueChanges('country')}
                 renderValue={value => {
                   if (!value) {
                     return "Country";
                   }
-                  return country
+                  return formData.country
                 }
                 }
             >
