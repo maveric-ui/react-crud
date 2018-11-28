@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Email.less';
+import './EmailComponent.less';
 
-class Email extends Component {
+class EmailComponent extends Component {
   render () {
     return (
         <p>Email Works!</p>
@@ -9,4 +9,4 @@ class Email extends Component {
   }
 }
 
-export default Email
+export default EmailComponent

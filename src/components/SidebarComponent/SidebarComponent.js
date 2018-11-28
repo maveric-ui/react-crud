@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from "react-router-dom";
 import './SidebarComponent.less';
 
 class SidebarComponent extends Component {
@@ -58,20 +59,20 @@ class SidebarComponent extends Component {
   render() {
     return (
           <div className="sidebar-container">
-            <ul className="sidebar__list">
-              <li className="sidebar__item">
-                <a href="table" className="active">{this.renderImgOne()}</a>
-              </li>
-              <li className="sidebar__item">
-                {this.renderImgTwo()}
-              </li>
-              <li className="sidebar__item">
-                {this.renderImgTree()}
-              </li>
-              <li className="sidebar__item">
-                {this.renderImgFour()}
-              </li>
-            </ul>
+              <ul className="sidebar__list">
+                <li className="sidebar__item">
+                  <NavLink  to="/employees/" activeClassName="active">{this.renderImgOne()}</NavLink>
+                </li>
+                <li className="sidebar__item">
+                  <NavLink  to="/archive/" activeClassName="active">{this.renderImgTwo()}</NavLink>
+                </li>
+                <li className="sidebar__item">
+                  <NavLink  to="/email/" activeClassName="active">{this.renderImgTree()}</NavLink>
+                </li>
+                <li className="sidebar__item">
+                  <NavLink  to="/statistic/" activeClassName="active">{this.renderImgFour()}</NavLink>
+                </li>
+              </ul>
           </div>
     )
   }

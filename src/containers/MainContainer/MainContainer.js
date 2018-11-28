@@ -1,45 +1,31 @@
 import React, { Component } from 'react';
 import './MainContainer.less';
-import Header from '../../components/Header/Header';
+import HeaderComponent from '../../components/HeaderComponent/HeaderComponent';
 import SidebarComponent from '../../components/SidebarComponent/SidebarComponent';
-import EmployeesContainer from '../EmployeesContainer/EmployeesContainer';
-import { getProfiles } from '../../actions/ProfilesAction';
-import connect from 'react-redux/es/connect/connect';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { MainRoutes } from '../../routers/MainRouter';
 
 class MainContainer extends Component {
   render() {
-    const { profiles, getProfiles, isLoading } = this.props;
-
     return (
-        <div className="root-container">
-          <Header/>
-          <div className="main-container">
-            <SidebarComponent/>
-            <EmployeesContainer
-                profiles={profiles}
-                getProfiles={getProfiles}
-                isLoading={isLoading}
-            />
+        <Router>
+          <div className="root-container">
+            <HeaderComponent/>
+            <div className="main-container">
+              <SidebarComponent/>
+              {MainRoutes.map((route, index) => (
+                  <Route
+                    key={index}
+                    exact={route.exact}
+                    path={route.path}
+                    component={route.component}
+                  />
+              ))}
+            </div>
           </div>
-        </div>
+        </Router>
     )
   }
 }
 
-const mapStateToProps = store => {
-  return {
-    profiles: store.profilesReducer.profiles,
-    isLoading: store.profilesReducer.isLoading,
-  }
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    getProfiles: () => dispatch(getProfiles())
-  }
-};
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(MainContainer);
+export default MainContainer;

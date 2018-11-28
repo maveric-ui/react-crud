@@ -3,7 +3,7 @@ import './EmployeesContainer.less';
 import TableComponent from '../../components/TableComponent/TableComponent';
 import Loader from 'react-loader-spinner'
 import connect from 'react-redux/es/connect/connect';
-import { deleteEmployee, sortEmployee, updateEmployee } from '../../actions/ProfilesAction';
+import { deleteEmployee, getProfiles, sortEmployee, updateEmployee } from '../../actions/ProfilesAction';
 import ModalEmployee from '../../components/ModalEmployee/ModalEmployee';
 import { Button, Icon } from '@material-ui/core';
 
@@ -43,7 +43,7 @@ class EmployeesContainer extends Component {
   };
 
   render() {
-    const {profiles, isLoading, deleteEmployee, sortEmployee} = this.props;
+    const {profiles, getProfiles, isLoading, deleteEmployee, sortEmployee} = this.props;
     const {employee} = this.state;
 
     return (
@@ -53,7 +53,6 @@ class EmployeesContainer extends Component {
                   <React.Fragment>
                     <ModalEmployee
                         openModal={handleOpen => this.onOpen = handleOpen}
-                        profiles={profiles}
                         employee={employee}
                         handleUpdateEmployeeModal={this.handleUpdateEmployeeModal}
                     />
@@ -70,6 +69,7 @@ class EmployeesContainer extends Component {
                     </div>
                     <TableComponent
                         profiles={profiles}
+                        getProfiles={getProfiles}
                         deleteEmployee={deleteEmployee}
                         handleEditEmployee={this.handleEditEmployee}
                         sortEmployee={sortEmployee}
@@ -82,8 +82,16 @@ class EmployeesContainer extends Component {
   }
 }
 
+const mapStateToProps = store => {
+  return {
+    profiles: store.profilesReducer.profiles,
+    isLoading: store.profilesReducer.isLoading,
+  }
+};
+
 const mapDispatchToProps = dispatch => {
   return {
+    getProfiles: () => dispatch(getProfiles()),
     sortEmployee: (order, orderBy) => dispatch(sortEmployee(order, orderBy)),
     updateEmployee: (employeeID, editedEmployee) => dispatch(updateEmployee(employeeID, editedEmployee)),
     deleteEmployee: employeeID => dispatch(deleteEmployee(employeeID))
@@ -91,6 +99,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps,
 )(EmployeesContainer)
