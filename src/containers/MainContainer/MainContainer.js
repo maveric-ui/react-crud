@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './MainContainer.less';
 import HeaderComponent from '../../components/HeaderComponent/HeaderComponent';
 import SidebarComponent from '../../components/SidebarComponent/SidebarComponent';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { MainRoutes } from '../../routers/MainRouter';
+import { Switch, Route, Redirect } from 'react-router'
 
 class MainContainer extends Component {
   render() {
@@ -13,14 +14,17 @@ class MainContainer extends Component {
             <HeaderComponent/>
             <div className="main-container">
               <SidebarComponent/>
-              {MainRoutes.map((route, index) => (
-                  <Route
-                    key={index}
-                    exact={route.exact}
-                    path={route.path}
-                    component={route.component}
-                  />
-              ))}
+              <Switch>
+                <Redirect exact from="/" to="/employees/"/>
+                {MainRoutes.map((route, index) => (
+                    <Route
+                      key={index}
+                      exact={route.exact}
+                      path={route.path}
+                      component={route.component}
+                    />
+                ))}
+              </Switch>
             </div>
           </div>
         </Router>

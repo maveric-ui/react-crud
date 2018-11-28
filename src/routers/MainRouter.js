@@ -5,14 +5,15 @@ export const MainRoutes = [
   {
     path: "/",
     exact: true,
-    component: EmployeesContainer,
   },
   {
     path: "/employees/",
+    exact: false,
     component: EmployeesContainer,
   },
   {
     path: "/email/",
+    exact: false,
     component: EmailContainer,
   }
 ];
