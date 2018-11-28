@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './MainContainer.less';
 import HeaderComponent from '../../components/HeaderComponent/HeaderComponent';
 import SidebarComponent from '../../components/SidebarComponent/SidebarComponent';
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect  } from "react-router-dom";
 import { MainRoutes } from '../../routers/MainRouter';
-import { Switch, Route, Redirect } from 'react-router'
 
 class MainContainer extends Component {
   render() {

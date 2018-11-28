@@ -25,7 +25,6 @@ class SearchComponent extends Component {
     const {focused} = this.state;
     const searchIcon = `i-search-${focused ? "primary" : "grey"}`;
     return (
-
         <Input
             id="search"
             className="search"

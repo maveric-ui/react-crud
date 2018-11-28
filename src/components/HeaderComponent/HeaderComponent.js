@@ -9,7 +9,7 @@ class HeaderComponent extends Component {
   render() {
     const {searchEmployee} = this.props;
     return (
-        <div className="container-header">
+        <div className="header-container">
           <div className="logo">
             <img src={logo} alt="logo"/>
           </div>
