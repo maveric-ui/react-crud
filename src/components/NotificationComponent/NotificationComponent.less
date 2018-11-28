@@ -1,0 +1,24 @@
+@import '../../styles/_colors';
+
+.notification-container {
+  margin: 0 25px;
+  .i-notification {
+    position: relative;
+    display: block;
+    width: 31px;
+    height: 31px;
+    background: url("./../../assets/img/notificaton.svg") no-repeat;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 24px;
+      width: 11px;
+      height: 11px;
+      background-color: @orange-one;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px 0 rgba(116, 120, 114, 0.55);
+    }
+  }
+}

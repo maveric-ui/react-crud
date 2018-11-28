@@ -4,6 +4,7 @@ import logo from './../../assets/img/logo.svg'
 import SearchComponent from '../SearchComponent/SearchComponent';
 import connect from 'react-redux/es/connect/connect';
 import { searchEmployee } from '../../actions/ProfilesAction';
+import NotificationComponent from '../NotificationComponent/NotificationComponent';
 
 class HeaderComponent extends Component {
   render() {
@@ -14,9 +15,8 @@ class HeaderComponent extends Component {
             <img src={logo} alt="logo"/>
           </div>
           <div className="header__items">
-            <SearchComponent
-                searchEmployee={searchEmployee}
-            />
+            <SearchComponent searchEmployee={searchEmployee}/>
+            <NotificationComponent />
           </div>
         </div>
     )

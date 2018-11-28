@@ -13,7 +13,6 @@ class App extends Component {
             <Route component={NotFoundedComponent}/>
           </Switch>
         </Router>
-
     );
   }
 }
