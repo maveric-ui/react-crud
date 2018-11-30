@@ -250,5 +250,37 @@
       "country": "USA",
       "id": 24
     }
+  ],
+  "notifications": [
+    {
+      "id": 0,
+      "message": "Employee was added",
+      "date": "2018-09-24"
+    },
+    {
+      "id": 1,
+      "message": "Employee was deleted",
+      "date": "2018-10-27"
+    },
+    {
+      "id": 2,
+      "message": "Employee was updated",
+      "date": "2018-10-29"
+    },
+    {
+      "id": 3,
+      "message": "Employee was deleted",
+      "date": "2018-10-30"
+    },
+    {
+      "id": 4,
+      "message": "Employee was deleted",
+      "date": "2018-11-11"
+    },
+    {
+      "id": 5,
+      "message": "Employee was deleted",
+      "date": "2018-11-30"
+    }
   ]
 }

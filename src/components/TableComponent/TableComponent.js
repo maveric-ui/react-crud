@@ -57,7 +57,7 @@ class TableComponent extends Component {
           {rowHead.map((row) => {
             return (
                 <TableCell key={row.id} id={row.id} className="table__head__cell">
-                  <Tooltip title="Sort" placement="bottom-start">
+                  <Tooltip title="Sort" placement="bottom-start" enterDelay={500}>
                     <span className="table__head__cell-sort" onClick={(e) => this.onSort(e, row.id)}>
                         {row.label}
                       <button className="btn btn-sort"/>
@@ -72,12 +72,13 @@ class TableComponent extends Component {
 
   renderTableBodyCells = () => {
     const {profiles} = this.props;
+    const dateOption = {
+      day: "numeric",
+      month: "numeric",
+      year: "numeric",
+    };
+
     return profiles.map((profile) => {
-      const dateOption = {
-        day: "numeric",
-        month: "numeric",
-        year: "numeric",
-      };
       const dateOfBirth = new Date(profile.dateOfBirth).toLocaleDateString('ru', dateOption);
       const hireDate = new Date(profile.hireDate).toLocaleDateString('ru', dateOption);
       return (

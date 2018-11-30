@@ -7,12 +7,7 @@ import NotFoundedComponent from '../components/NotFoundComponent/NotFoundCompone
 class App extends Component {
   render() {
     return (
-        <Router>
-          <Switch>
-            <Route exact path="/" component={MainContainer}/>
-            <Route component={NotFoundedComponent}/>
-          </Switch>
-        </Router>
+        <MainContainer />
     );
   }
 }

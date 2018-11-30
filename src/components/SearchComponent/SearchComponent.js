@@ -3,9 +3,12 @@ import './SearchComponent.less';
 import { Input, Icon } from '@material-ui/core';
 
 class SearchComponent extends Component {
-  state = {
-    focused: false,
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      focused: false,
+    };
+  }
 
   onFocus = () => {
     this.setState({focused: true})
