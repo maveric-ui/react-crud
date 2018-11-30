@@ -6,6 +6,7 @@ import connect from 'react-redux/es/connect/connect';
 import { deleteEmployee, getProfiles, sortEmployee, updateEmployee } from '../../actions/ProfilesAction';
 import ModalEmployee from '../../components/ModalEmployee/ModalEmployee';
 import { Button, Icon } from '@material-ui/core';
+import { addNotification } from '../../actions/NotificationsAction';
 
 class EmployeesContainer extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class EmployeesContainer extends Component {
   };
 
   render() {
-    const {profiles, getProfiles, isLoading, deleteEmployee, sortEmployee} = this.props;
+    const {profiles, getProfiles, isLoading, deleteEmployee, sortEmployee, addNotification} = this.props;
     const {employee} = this.state;
 
     return (
@@ -55,6 +56,7 @@ class EmployeesContainer extends Component {
                         openModal={handleOpen => this.onOpen = handleOpen}
                         employee={employee}
                         handleUpdateEmployeeModal={this.handleUpdateEmployeeModal}
+                        addNotification={addNotification}
                     />
 
                     <div className="employees-header">
@@ -73,6 +75,7 @@ class EmployeesContainer extends Component {
                         deleteEmployee={deleteEmployee}
                         handleEditEmployee={this.handleEditEmployee}
                         sortEmployee={sortEmployee}
+                        addNotification={addNotification}
                     />
                   </React.Fragment>
               )
@@ -94,7 +97,8 @@ const mapDispatchToProps = dispatch => {
     getProfiles: () => dispatch(getProfiles()),
     sortEmployee: (order, orderBy) => dispatch(sortEmployee(order, orderBy)),
     updateEmployee: (employeeID, editedEmployee) => dispatch(updateEmployee(employeeID, editedEmployee)),
-    deleteEmployee: employeeID => dispatch(deleteEmployee(employeeID))
+    deleteEmployee: employeeID => dispatch(deleteEmployee(employeeID)),
+    addNotification: newNotification => dispatch(addNotification(newNotification))
   }
 };
 

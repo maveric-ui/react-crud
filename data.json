@@ -241,12 +241,12 @@
       "country": "Virgin Islands"
     },
     {
-      "name": "Hennry",
+      "name": "Henry",
       "position": "Director",
-      "dateOfBirth": "2018-11-03",
-      "hireDate": "2018-11-16",
-      "address": "456 Herington St. 56",
-      "city": "New York",
+      "dateOfBirth": "2018-11-02",
+      "hireDate": "2018-11-30",
+      "address": "",
+      "city": "",
       "country": "USA",
       "id": 24
     }
@@ -281,6 +281,41 @@
       "id": 5,
       "message": "Employee was deleted",
       "date": "2018-11-30"
+    },
+    {
+      "date": "2018-11-30T12:44:21.982Z",
+      "message": "Employee was updated",
+      "id": 6
+    },
+    {
+      "date": "2018-11-30T12:44:31.848Z",
+      "message": "Employee was updated",
+      "id": 7
+    },
+    {
+      "date": "2018-11-30T12:55:29.573Z",
+      "message": "Employee was updated",
+      "id": 8
+    },
+    {
+      "date": "2018-11-30T12:55:33.285Z",
+      "message": "Employee was updated",
+      "id": 9
+    },
+    {
+      "date": "2018-11-30T12:56:45.501Z",
+      "message": "Employee was deleted",
+      "id": 10
+    },
+    {
+      "date": "2018-11-30T13:23:10.090Z",
+      "message": "Employee was deleted",
+      "id": 11
+    },
+    {
+      "date": "2018-11-30T13:39:46.583Z",
+      "message": "Employee was edited",
+      "id": 12
     }
   ]
 }

@@ -2,23 +2,26 @@ import React, { Component } from 'react';
 import './NotificationComponent.less';
 import { IconButton, Icon } from '@material-ui/core';
 
+function sortByDate(a,b) {
+  return new Date(b.date) - new Date(a.date);
+}
 
 class NotificationComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false,
-      isNotification: !!props.notifications,
+      isNotification: !!props.notifications
     }
   }
 
   componentDidMount() {
     this.props.getNotifications();
-    document.addEventListener('mousedown', this.handleOutsideClick, false);
+    document.addEventListener('mousedown', this.handleOutsideClick);
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleOutsideClick, false);
+    document.removeEventListener('mousedown', this.handleOutsideClick);
   }
 
   handleClickDropDown = () => {
@@ -29,25 +32,31 @@ class NotificationComponent extends Component {
     if (this.node.contains(e.target)) {
       return;
     }
-    this.handleClickDropDown();
+
+    this.setState({isOpen: false})
   };
 
   renderNotifications = () => {
     const {notifications} = this.props;
+
+    const sortedNotification = notifications.sort(sortByDate);
+
     const dateOption = {
       day: "numeric",
       month: "numeric",
       year: "numeric",
+      hour: "numeric",
+      minute: "numeric",
     };
 
-    return notifications.map((notification) => {
-      const notificationDate = new Date(notification.date).toLocaleDateString('ru', dateOption);
+    return sortedNotification.map((notification) => {
+      const notificationDate = new Date(notification.date).toLocaleString('ru', dateOption);
       return (
           <div className="card-container" key={notification.id}>
             <span className="card-date">{notificationDate}</span>
             <div className="card-content">{notification.message}</div>
             <div className="card-control">
-              <IconButton  size="small" variant="contained">
+              <IconButton>
                 <Icon>close</Icon>
               </IconButton >
             </div>

@@ -8,6 +8,9 @@ import NotificationComponent from '../NotificationComponent/NotificationComponen
 import { getNotifications } from '../../actions/NotificationsAction';
 
 class HeaderComponent extends Component {
+
+
+
   render() {
     const {searchEmployee, getNotifications, notifications} = this.props;
     return (
@@ -18,8 +21,8 @@ class HeaderComponent extends Component {
           <div className="header__items">
             <SearchComponent searchEmployee={searchEmployee}/>
             <NotificationComponent
-              notifications={notifications}
-              getNotifications={getNotifications}
+                getNotifications={getNotifications}
+                notifications={notifications}
             />
           </div>
         </div>
@@ -27,7 +30,7 @@ class HeaderComponent extends Component {
   }
 }
 
-const mapStatetoProps = store => {
+const mapStateToProps = store => {
   return {
     notifications: store.notificationsReducer.notifications
   }
@@ -41,6 +44,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-    mapStatetoProps,
+    mapStateToProps,
     mapDispatchToProps
 ) (HeaderComponent);

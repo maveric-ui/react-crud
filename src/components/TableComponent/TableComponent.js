@@ -16,6 +16,10 @@ class TableComponent extends Component {
 
   onDelete = (e, employee) => {
     this.props.deleteEmployee(employee.id);
+    this.props.addNotification({
+      date: new Date(),
+      message: "Employee was deleted"
+    })
   };
 
   onSort = (e, orderBy) => {

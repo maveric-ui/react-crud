@@ -95,6 +95,10 @@ class FormEmployeeComponent extends Component {
     }
 
     this.props.handleSave(newEmployee);
+    this.props.addNotification({
+      date: new Date(),
+      message: "New employee was added"
+    })
   };
 
   onUpdate = (e) => {
@@ -107,6 +111,10 @@ class FormEmployeeComponent extends Component {
     }
 
     this.props.handleUpdate(updatedEmployee);
+    this.props.addNotification({
+      date: new Date(),
+      message: "Employee was edited"
+    })
   };
 
   onClose = () => {

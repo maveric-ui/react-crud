@@ -36,7 +36,7 @@ class ModalEmployee extends Component {
   };
 
   render() {
-    const {employee} = this.props;
+    const {employee,addNotification} = this.props;
     return (
         <div>
           <Modal
@@ -55,6 +55,7 @@ class ModalEmployee extends Component {
                   handleClose={this.handleClose}
                   handleSave={this.handleSave}
                   handleUpdate={this.handleUpdate}
+                  addNotification={addNotification}
               />
             </div>
           </Modal>

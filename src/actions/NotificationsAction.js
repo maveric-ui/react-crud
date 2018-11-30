@@ -3,6 +3,7 @@ import axios from 'axios';
 export const NOTIFICATIONS_REQUEST = "NOTIFICATIONS_REQUEST";
 export const NOTIFICATIONS_REQUEST_SUCCESS = "NOTIFICATIONS_REQUEST_SUCCESS";
 export const NOTIFICATIONS_REQUEST_FAIL = "NOTIFICATIONS_REQUEST_FAIL";
+export const NOTIFICATION_ADD = "NOTIFICATIONS_ADD";
 
 const url = 'http://localhost:3200/notifications';
 
@@ -26,5 +27,17 @@ export const getNotifications = () => {
             payload: new Error('failed'),
           })
         });
+  }
+};
+
+export const addNotification = newNotification => {
+  return dispatch => {
+    axios.post(url, newNotification)
+        .then((newNotification) => {
+          dispatch({
+            type: NOTIFICATION_ADD,
+            payload: newNotification
+          })
+        })
   }
 };
