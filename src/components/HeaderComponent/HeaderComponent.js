@@ -5,14 +5,14 @@ import SearchComponent from '../SearchComponent/SearchComponent';
 import connect from 'react-redux/es/connect/connect';
 import { searchEmployee } from '../../actions/ProfilesAction';
 import NotificationComponent from '../NotificationComponent/NotificationComponent';
-import { getNotifications } from '../../actions/NotificationsAction';
+import { deleteNotification, getNotifications } from '../../actions/NotificationsAction';
 
 class HeaderComponent extends Component {
 
 
 
   render() {
-    const {searchEmployee, getNotifications, notifications} = this.props;
+    const {searchEmployee, getNotifications, notifications, deleteNotification} = this.props;
     return (
         <div className="header-container">
           <div className="logo">
@@ -23,6 +23,7 @@ class HeaderComponent extends Component {
             <NotificationComponent
                 getNotifications={getNotifications}
                 notifications={notifications}
+                deleteNotification={deleteNotification}
             />
           </div>
         </div>
@@ -39,7 +40,8 @@ const mapStateToProps = store => {
 const mapDispatchToProps = dispatch => {
   return {
     searchEmployee: searchKey => dispatch(searchEmployee(searchKey)),
-    getNotifications: () => dispatch(getNotifications())
+    getNotifications: () => dispatch(getNotifications()),
+    deleteNotification: notificationID => dispatch(deleteNotification(notificationID))
   }
 };
 

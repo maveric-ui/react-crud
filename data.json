@@ -253,69 +253,39 @@
   ],
   "notifications": [
     {
-      "id": 0,
-      "message": "Employee was added",
-      "date": "2018-09-24"
+      "date": "2018-11-30T15:04:46.878Z",
+      "message": "Employee was edited",
+      "id": 1
     },
     {
-      "id": 1,
+      "date": "2018-11-30T15:04:49.319Z",
       "message": "Employee was deleted",
-      "date": "2018-10-27"
+      "id": 2
     },
     {
-      "id": 2,
-      "message": "Employee was updated",
-      "date": "2018-10-29"
-    },
-    {
-      "id": 3,
+      "date": "2018-11-30T15:04:50.861Z",
       "message": "Employee was deleted",
-      "date": "2018-10-30"
+      "id": 3
     },
     {
-      "id": 4,
-      "message": "Employee was deleted",
-      "date": "2018-11-11"
+      "date": "2018-11-30T15:05:00.223Z",
+      "message": "Employee was edited",
+      "id": 4
     },
     {
-      "id": 5,
-      "message": "Employee was deleted",
-      "date": "2018-11-30"
+      "date": "2018-11-30T15:05:02.174Z",
+      "message": "Employee was edited",
+      "id": 5
     },
     {
-      "date": "2018-11-30T12:44:21.982Z",
-      "message": "Employee was updated",
+      "date": "2018-11-30T15:05:23.828Z",
+      "message": "New employee was added",
       "id": 6
     },
     {
-      "date": "2018-11-30T12:44:31.848Z",
-      "message": "Employee was updated",
+      "date": "2018-11-30T15:09:11.788Z",
+      "message": "Employee was deleted",
       "id": 7
-    },
-    {
-      "date": "2018-11-30T12:55:29.573Z",
-      "message": "Employee was updated",
-      "id": 8
-    },
-    {
-      "date": "2018-11-30T12:55:33.285Z",
-      "message": "Employee was updated",
-      "id": 9
-    },
-    {
-      "date": "2018-11-30T12:56:45.501Z",
-      "message": "Employee was deleted",
-      "id": 10
-    },
-    {
-      "date": "2018-11-30T13:23:10.090Z",
-      "message": "Employee was deleted",
-      "id": 11
-    },
-    {
-      "date": "2018-11-30T13:39:46.583Z",
-      "message": "Employee was edited",
-      "id": 12
     }
   ]
 }

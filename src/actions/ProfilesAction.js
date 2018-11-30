@@ -106,5 +106,4 @@ export const deleteEmployee = employeeID => {
           return new Error('failed')
         })
   }
-
 };

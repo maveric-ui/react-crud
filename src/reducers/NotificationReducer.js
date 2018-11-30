@@ -1,7 +1,7 @@
 import {
   NOTIFICATIONS_REQUEST,
   NOTIFICATIONS_REQUEST_SUCCESS,
-  NOTIFICATIONS_REQUEST_FAIL, NOTIFICATION_ADD
+  NOTIFICATIONS_REQUEST_FAIL, NOTIFICATION_ADD, NOTIFICATION_DELETE
 } from '../actions/NotificationsAction';
 
 const initialState = {
@@ -22,6 +22,9 @@ export const notificationsReducer = (state = initialState, action) => {
 
     case NOTIFICATION_ADD:
       return {...state, notifications: [...state.notifications, action.payload.data]};
+
+    case NOTIFICATION_DELETE:
+      return {...state, notifications: state.notifications.filter((notification) => notification.id !== action.payload)};
 
     default:
       return state;

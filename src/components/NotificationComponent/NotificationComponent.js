@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './NotificationComponent.less';
 import { IconButton, Icon } from '@material-ui/core';
 
-function sortByDate(a,b) {
+function sortByDate(a, b) {
   return new Date(b.date) - new Date(a.date);
 }
 
@@ -11,7 +11,6 @@ class NotificationComponent extends Component {
     super(props);
     this.state = {
       isOpen: false,
-      isNotification: !!props.notifications
     }
   }
 
@@ -36,11 +35,13 @@ class NotificationComponent extends Component {
     this.setState({isOpen: false})
   };
 
+  deleteNotification = (e, notification) => {
+    this.props.deleteNotification(notification.id)
+  };
+
   renderNotifications = () => {
     const {notifications} = this.props;
-
     const sortedNotification = notifications.sort(sortByDate);
-
     const dateOption = {
       day: "numeric",
       month: "numeric",
@@ -56,9 +57,11 @@ class NotificationComponent extends Component {
             <span className="card-date">{notificationDate}</span>
             <div className="card-content">{notification.message}</div>
             <div className="card-control">
-              <IconButton>
+              <IconButton className="btn__delete-notification"
+                          onClick={(e) => this.deleteNotification(e, notification)}
+              >
                 <Icon>close</Icon>
-              </IconButton >
+              </IconButton>
             </div>
           </div>
       )
@@ -67,17 +70,22 @@ class NotificationComponent extends Component {
 
 
   render() {
-    const {isOpen, isNotification} = this.state;
+    const {isOpen} = this.state;
+    const {notifications} = this.props;
     return (
         <div className="notification-container" ref={node => this.node = node}>
           <IconButton className="btn btn-notification" onClick={this.handleClickDropDown}>
             <span className="notification-icon"/>
-            <span className={`notification-indicator ${isNotification ? "show" : "hidden"}`}/>
+            <span className={`notification-indicator ${notifications.length ? "show" : "hidden"}`}/>
           </IconButton>
 
           <div className={`dropdown-container ${isOpen ? "show" : "hidden"}`}>
             <div className="dropdown__title">Notification</div>
-            <div className="dropdown__content">{this.renderNotifications()}</div>
+            <div className="dropdown__content">
+              {notifications.length ? this.renderNotifications() :
+                  <p className="content-empty">You don't have any notifications yet</p>
+              }
+            </div>
           </div>
         </div>
     );
