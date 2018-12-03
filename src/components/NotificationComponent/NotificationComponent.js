@@ -11,7 +11,8 @@ class NotificationComponent extends Component {
     super(props);
     this.state = {
       isOpen: false,
-    }
+      isNewNotification: false,
+    };
   }
 
   componentDidMount() {
@@ -24,7 +25,10 @@ class NotificationComponent extends Component {
   }
 
   handleClickDropDown = () => {
-    this.setState(state => ({isOpen: !state.isOpen}))
+    this.setState(state => ({
+      isOpen: !state.isOpen,
+      isNewNotification: false
+    }))
   };
 
   handleOutsideClick = (e) => {
@@ -68,6 +72,14 @@ class NotificationComponent extends Component {
     });
   };
 
+  renderNotificationIndicator = () => {
+    const {notifications} = this.props;
+
+    return (
+        <span className={`notification-indicator ${notifications.length ? "show" : "hidden"}`}/>
+    )
+  };
+
 
   render() {
     const {isOpen} = this.state;
@@ -76,7 +88,7 @@ class NotificationComponent extends Component {
         <div className="notification-container" ref={node => this.node = node}>
           <IconButton className="btn btn-notification" onClick={this.handleClickDropDown}>
             <span className="notification-icon"/>
-            <span className={`notification-indicator ${notifications.length ? "show" : "hidden"}`}/>
+            {this.renderNotificationIndicator()}
           </IconButton>
 
           <div className={`dropdown-container ${isOpen ? "show" : "hidden"}`}>

@@ -41,14 +41,14 @@
       "country": "Montana"
     },
     {
-      "id": 4,
       "name": "Eaton Erickson",
       "position": "Director",
       "dateOfBirth": "1996-08-25",
       "hireDate": "2006-06-17",
       "address": "590 Post Court,  Rhode Island, 5075",
       "city": "Siglerville",
-      "country": "South Carolina"
+      "country": "South Carolina",
+      "id": 4
     },
     {
       "id": 5,
@@ -241,51 +241,15 @@
       "country": "Virgin Islands"
     },
     {
-      "name": "Henry",
-      "position": "Director",
-      "dateOfBirth": "2018-11-02",
-      "hireDate": "2018-11-30",
+      "name": "Henrry",
+      "position": "",
+      "dateOfBirth": "2018-12-01",
+      "hireDate": "2018-12-03",
       "address": "",
       "city": "",
-      "country": "USA",
+      "country": "England",
       "id": 24
     }
   ],
-  "notifications": [
-    {
-      "date": "2018-11-30T15:04:46.878Z",
-      "message": "Employee was edited",
-      "id": 1
-    },
-    {
-      "date": "2018-11-30T15:04:49.319Z",
-      "message": "Employee was deleted",
-      "id": 2
-    },
-    {
-      "date": "2018-11-30T15:04:50.861Z",
-      "message": "Employee was deleted",
-      "id": 3
-    },
-    {
-      "date": "2018-11-30T15:05:00.223Z",
-      "message": "Employee was edited",
-      "id": 4
-    },
-    {
-      "date": "2018-11-30T15:05:02.174Z",
-      "message": "Employee was edited",
-      "id": 5
-    },
-    {
-      "date": "2018-11-30T15:05:23.828Z",
-      "message": "New employee was added",
-      "id": 6
-    },
-    {
-      "date": "2018-11-30T15:09:11.788Z",
-      "message": "Employee was deleted",
-      "id": 7
-    }
-  ]
+  "notifications": []
 }

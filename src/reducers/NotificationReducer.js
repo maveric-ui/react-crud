@@ -29,5 +29,4 @@ export const notificationsReducer = (state = initialState, action) => {
     default:
       return state;
   }
-
 };

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import './HeaderComponent.less';
+import './HeaderContainer.less';
 import logo from './../../assets/img/logo.svg'
-import SearchComponent from '../SearchComponent/SearchComponent';
+import SearchComponent from '../../components/SearchComponent/SearchComponent';
 import connect from 'react-redux/es/connect/connect';
 import { searchEmployee } from '../../actions/ProfilesAction';
-import NotificationComponent from '../NotificationComponent/NotificationComponent';
+import NotificationComponent from '../../components/NotificationComponent/NotificationComponent';
 import { deleteNotification, getNotifications } from '../../actions/NotificationsAction';
+import LogInComponent from '../../components/LogInComponent/LogInComponent';
 
-class HeaderComponent extends Component {
-
-
+class HeaderContainer extends Component {
 
   render() {
     const {searchEmployee, getNotifications, notifications, deleteNotification} = this.props;
@@ -25,6 +24,7 @@ class HeaderComponent extends Component {
                 notifications={notifications}
                 deleteNotification={deleteNotification}
             />
+            <LogInComponent />
           </div>
         </div>
     )
@@ -33,7 +33,7 @@ class HeaderComponent extends Component {
 
 const mapStateToProps = store => {
   return {
-    notifications: store.notificationsReducer.notifications
+    notifications: store.notificationsReducer.notifications,
   }
 };
 
@@ -48,4 +48,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-) (HeaderComponent);
+)(HeaderContainer);

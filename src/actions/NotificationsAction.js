@@ -10,9 +10,7 @@ const url = 'http://localhost:3200/notifications';
 
 export const getNotifications = () => {
   return dispatch => {
-    dispatch({
-      type: NOTIFICATIONS_REQUEST
-    });
+    dispatch({type: NOTIFICATIONS_REQUEST});
 
     axios.get(url)
         .then((response) => {
