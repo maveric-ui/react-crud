@@ -1876,6 +1876,10 @@ camelcase@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
 
+can-use-dom@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/can-use-dom/-/can-use-dom-0.1.0.tgz#22cc4a34a0abc43950f42c6411024a3f6366b45a"
+
 caniuse-api@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/caniuse-api/-/caniuse-api-3.0.0.tgz#5e4d90e2274961d46291997df599e3ed008ee4c0"
@@ -7270,6 +7274,14 @@ react-event-listener@^0.6.2:
     prop-types "^15.6.0"
     warning "^4.0.1"
 
+react-facebook@^6.0.15:
+  version "6.0.15"
+  resolved "https://registry.yarnpkg.com/react-facebook/-/react-facebook-6.0.15.tgz#24914e13ab4f49c8ab73d638535ec97bd78daff5"
+  dependencies:
+    babel-runtime "^6.26.0"
+    can-use-dom "^0.1.0"
+    react-spinner-children "^1.0.8"
+
 react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
@@ -7314,6 +7326,13 @@ react-router@^4.3.1:
     path-to-regexp "^1.7.0"
     prop-types "^15.6.1"
     warning "^4.0.1"
+
+react-spinner-children@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-spinner-children/-/react-spinner-children-1.0.8.tgz#6fdd6a89593c5f233bb56f4deccb812382e6ca74"
+  dependencies:
+    prop-types "^15.6.0"
+    spin.js "^2.3.2"
 
 react-transition-group@^2.2.1:
   version "2.5.0"
@@ -8098,6 +8117,10 @@ spdy@^3.4.1:
     safe-buffer "^5.0.1"
     select-hose "^2.0.0"
     spdy-transport "^2.0.18"
+
+spin.js@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/spin.js/-/spin.js-2.3.2.tgz#6caa56d520673450fd5cfbc6971e6d0772c37a1a"
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

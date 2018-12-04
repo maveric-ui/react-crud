@@ -7,11 +7,21 @@ import { searchEmployee } from '../../actions/ProfilesAction';
 import NotificationComponent from '../../components/NotificationComponent/NotificationComponent';
 import { deleteNotification, getNotifications } from '../../actions/NotificationsAction';
 import LogInComponent from '../../components/LogInComponent/LogInComponent';
+import { facebookLogIn, facebookLogOut } from '../../actions/FacebookLoginAction';
 
 class HeaderContainer extends Component {
 
   render() {
-    const {searchEmployee, getNotifications, notifications, deleteNotification} = this.props;
+    const {
+      searchEmployee,
+      getNotifications,
+      notifications,
+      deleteNotification,
+      facebookLogIn,
+      isLoggedIn,
+      facebookLogOut
+    } = this.props;
+
     return (
         <div className="header-container">
           <div className="logo">
@@ -24,7 +34,11 @@ class HeaderContainer extends Component {
                 notifications={notifications}
                 deleteNotification={deleteNotification}
             />
-            <LogInComponent />
+            <LogInComponent
+                isLoggedIn={isLoggedIn}
+                facebookLogIn={facebookLogIn}
+                facebookLogOut={facebookLogOut}
+            />
           </div>
         </div>
     )
@@ -34,6 +48,7 @@ class HeaderContainer extends Component {
 const mapStateToProps = store => {
   return {
     notifications: store.notificationsReducer.notifications,
+    isLoggedIn: store.facebookLoginReducer.isLoggedIn,
   }
 };
 
@@ -41,7 +56,9 @@ const mapDispatchToProps = dispatch => {
   return {
     searchEmployee: searchKey => dispatch(searchEmployee(searchKey)),
     getNotifications: () => dispatch(getNotifications()),
-    deleteNotification: notificationID => dispatch(deleteNotification(notificationID))
+    deleteNotification: notificationID => dispatch(deleteNotification(notificationID)),
+    facebookLogIn: (response) => dispatch(facebookLogIn(response)),
+    facebookLogOut: (response) => dispatch(facebookLogOut(response))
   }
 };
 
