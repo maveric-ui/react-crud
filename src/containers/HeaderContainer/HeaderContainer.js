@@ -8,6 +8,7 @@ import NotificationComponent from '../../components/NotificationComponent/Notifi
 import { deleteNotification, getNotifications } from '../../actions/NotificationsAction';
 import LogInComponent from '../../components/LogInComponent/LogInComponent';
 import { facebookLogIn, facebookLogOut } from '../../actions/FacebookLoginAction';
+import FacebookLoginComponent from '../../components/FacebookLoginComponent/FacebookLoginComponent';
 
 class HeaderContainer extends Component {
 
@@ -34,11 +35,14 @@ class HeaderContainer extends Component {
                 notifications={notifications}
                 deleteNotification={deleteNotification}
             />
-            <LogInComponent
-                isLoggedIn={isLoggedIn}
-                facebookLogIn={facebookLogIn}
-                facebookLogOut={facebookLogOut}
-            />
+            {/*<LogInComponent*/}
+                {/*isLoggedIn={isLoggedIn}*/}
+                {/*facebookLogIn={facebookLogIn}*/}
+                {/*facebookLogOut={facebookLogOut}*/}
+            {/*/>*/}
+
+
+            <FacebookLoginComponent />
           </div>
         </div>
     )

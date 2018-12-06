@@ -1,0 +1,28 @@
+@import "./../../styles/_colors";
+
+.logged-in-container {
+  width: 250px;
+  margin: auto;
+  background: @facebook-one;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .logged-in__img {
+    margin-right: 10px;
+  }
+
+  .logged-in-user-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logged-in__name{
+      color: @default-color;
+      margin: 0;
+    }
+  }
+
+}
