@@ -21,8 +21,8 @@ class FacebookLoginComponent extends Component {
     })
   };
 
-  componentClicked = () => {
-    console.log('click')
+  handleLogout = () => {
+    this.setState({isLoggedIn: false})
   };
 
   renderFacebookLog = () => {
@@ -30,13 +30,12 @@ class FacebookLoginComponent extends Component {
 
     if (isLoggedIn) {
       return (
-          <div className="logged-in-container">
+          <button className="btn btn-logout" onClick={this.handleLogout}>
             <img src={picture} className="logged-in__img" alt={name}/>
             <div className="logged-in-user-info">
               <p className="logged-in__name">{name}</p>
             </div>
-
-          </div>
+          </button>
       )
     } else {
       return (
@@ -44,7 +43,6 @@ class FacebookLoginComponent extends Component {
               appId="1900529580063948"
               autoLoad={true}
               fields="name,email,picture"
-              onClick={this.componentClicked}
               callback={this.responseFacebook}
           />
       )
